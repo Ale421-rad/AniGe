@@ -9,35 +9,38 @@ body {
 
 /* Style for the character selection area */
 #character-selection {
-  display: grid; /* Utiliser une grille pour l'agencement des personnages */
-  grid-template-columns: repeat(5, 1fr); /* 5 colonnes de largeur égale */
-  gap: 20px; /* Espace entre les images */
-  justify-items: center; /* Centrer les éléments horizontalement */
-  margin-top: 50px;
+  display: grid; /* Utilise une grille pour organiser les images */
+  grid-template-columns: repeat(5, 1fr); /* 5 colonnes de même largeur */
+  gap: 20px; /* Espacement entre les images */
+  justify-content: center; /* Centre la grille horizontalement */
+  margin: 0 auto; /* Centre le conteneur sur la page */
+  padding: 20px; /* Ajoute un peu d'espace autour */
+  max-width: 80%; /* Limite la largeur maximale de la grille */
+  box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur */
 }
 
 /* Style for each character image */
 .character {
-  max-width: 100%; /* Limite la largeur maximale à celle du conteneur */
-  height: auto; /* Conserve le ratio d'aspect d'origine */
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s, box-shadow 0.2s; /* Transition pour les effets de survol */
-  position: relative;
-  cursor: pointer;
+  width: 120%; /* Adapte la largeur de l'image à la boîte */
+  height: 100%; /* Adapte la hauteur de l'image à la boîte */
+  max-width: 150px; /* Limite la largeur maximale des images */
+  max-height: 150px; /* Limite la hauteur maximale des images */
+  object-fit: contain; /* Garde les proportions des images */
+  border-radius: 10px; /* Coins arrondis pour une apparence plus douce */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajoute une ombre légère pour mettre en valeur les images */
+  transition: transform 0.3s; /* Animation lors du survol */
 }
 
 /* Hover effect for the character images */
 .character:hover {
-  transform: scale(1.1); /* Zoom in slightly */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+  transform: scale(1.05);
 }
 
 /* Add a pseudo-element for the character name */
 .character::after {
   content: attr(data-name); /* Display the character's name from the data-name attribute */
   position: absolute;
-  bottom: -30px;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
   background-color: rgba(130, 182, 241, 0.253); /* Semi-transparent black background */
@@ -45,7 +48,7 @@ body {
   padding: 5px 10px;
   border-radius: 5px;
   opacity: 0; /* Hidden by default */
-  transition: opacity 0.2s;
+  transition: opacity 0.3s;
   white-space: nowrap; /* Prevent text wrapping */
   pointer-events: none; /* Ensure this does not block hover */
 }
