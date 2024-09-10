@@ -18,12 +18,12 @@ body {
 
 /* Style for each character image */
 .character {
-  width: 150px;
-  height: 200px;
+  max-width: 100%; /* Limite la largeur maximale à celle du conteneur */
+  height: auto; /* Conserve le ratio d'aspect d'origine */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition for hover effects */
-  position: relative; /* Position relative for pseudo-element */
+  transition: transform 0.2s, box-shadow 0.2s; /* Transition pour les effets de survol */
+  position: relative;
   cursor: pointer;
 }
 
@@ -40,7 +40,7 @@ body {
   bottom: -30px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba(63, 245, 252, 0.548); /* Semi-transparent black background */
+  background-color: rgba(130, 182, 241, 0.253); /* Semi-transparent black background */
   color: rgb(0, 2, 100);
   padding: 5px 10px;
   border-radius: 5px;
