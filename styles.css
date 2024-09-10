@@ -29,6 +29,9 @@ body {
   border-radius: 10px; /* Coins arrondis pour une apparence plus douce */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajoute une ombre légère pour mettre en valeur les images */
   transition: transform 0.3s; /* Animation lors du survol */
+  position: relative; /* Positionnement relatif pour les pseudo-éléments */
+  display: block; /* Assure que l'image est un bloc */
+  margin: 0 auto; /* Centre l'image à l'intérieur de son conteneur */
 }
 
 /* Hover effect for the character images */
