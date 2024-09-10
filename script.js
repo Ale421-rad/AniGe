@@ -1,3 +1,5 @@
+document.addEventListener('DOMContentLoaded', function() {
+  var characterSelection = document.getElementById('character-selection');
 // Sélection de Personnage
 document.addEventListener("DOMContentLoaded", () => {
   const characters = document.querySelectorAll('.character');
@@ -44,4 +46,5 @@ document.getElementById("add-xp-button").addEventListener("click", () => {
   document.getElementById("character-level").textContent = level;
 
   // Réajuster d'autres attributs (PA, CA, SP) en fonction du niveau
+});
 });
