@@ -1,27 +1,11 @@
-/* Set a nice pale blue background for the whole page */
-body {
-  background-color: #9ec5ff; /* Pale blue */
-  font-family: Arial, sans-serif;
-  text-align: center;
-  margin: 0;
-  padding: 20px;
-}
-
 /* Background général de la page */
 body {
-  background-color: #e0f7fa; /* Bleu pâle */
-  background-image: radial-gradient(circle, rgba(173, 216, 230, 0.4) 20%, transparent 20%), 
-                    radial-gradient(circle, rgba(173, 216, 230, 0.4) 20%, transparent 20%);
-  background-position: 0 0, 50px 50px; /* Positionne les motifs */
-  background-size: 100px 100px; /* Taille des motifs */
-}
-
-/* Centre le conteneur de la grille */
-#character-selection {
-  background-color: white; /* Conserve un fond blanc autour des personnages */
-  border-radius: 15px; /* Coins arrondis pour la grille */
-  padding: 20px; /* Espace autour de la grille */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Légère ombre portée */
+  background-color: #9bd5fc; /* Bleu pâle */
+  background-image: 
+    radial-gradient(circle, rgba(173, 216, 230, 0.3) 20%, transparent 20%), 
+    radial-gradient(circle, rgba(173, 216, 230, 0.3) 20%, transparent 20%);
+  background-position: 0 0, 50px 50px; /* Positionne les motifs en décalage */
+  background-size: 100px 100px; /* Taille des motifs géométriques */
 }
 
 /* Style du titre "Select Your Character" */
@@ -47,8 +31,9 @@ h1 {
   margin: 0 auto; /* Centre le conteneur sur la page */
   padding: 20px; /* Ajoute un peu d'espace autour */
   max-width: 60%; /* Limite la largeur maximale de la grille */
-  box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur */
-  position: relative; /* Positionnement relatif pour les éléments enfants */
+  background-color: white; /* Conserve un fond blanc pour le conteneur */
+  border-radius: 15px; /* Coins arrondis pour la grille */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Légère ombre portée */
 }
 
 /* Style for each character image */
