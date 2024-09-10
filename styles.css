@@ -1,10 +1,25 @@
-/* Set a nice pale blue background for the whole page */
+css
+/* Background général de la page */
 body {
-  background-color: #7dabf0; /* Pale blue */
-  font-family: Arial, sans-serif;
-  text-align: center;
-  margin: 0;
-  padding: 20px;
+  background-color: #a2e2fc; /* Bleu pâle */
+  background-image: radial-gradient(circle, rgba(173, 216, 230, 0.4) 20%, transparent 20%), 
+                    radial-gradient(circle, rgba(173, 216, 230, 0.4) 20%, transparent 20%);
+  background-position: 0 0, 50px 50px; /* Positionne les motifs */
+  background-size: 100px 100px; /* Taille des motifs */
+}
+
+/* Style du titre "Select Your Character" */
+h1 {
+  font-size: 36px; /* Taille de la police */
+  font-family: 'Arial', sans-serif; /* Police de caractères */
+  text-align: center; /* Centre le texte */
+  margin-bottom: 20px; /* Espace en bas du titre */
+  color: #007BFF; /* Couleur bleue pour le texte */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Ombre légère pour le texte */
+  background: linear-gradient(to right, #00BFFF, #1E90FF); /* Dégradé de bleu */
+  background-clip: text; /* Applique le dégradé au texte */
+  -webkit-background-clip: text; /* Préfixe pour Safari */
+  color: transparent; /* Rend le texte transparent */
 }
 
 /* Style for the character selection area */
@@ -15,7 +30,7 @@ body {
   justify-content: center; /* Centre la grille horizontalement */
   margin: 0 auto; /* Centre le conteneur sur la page */
   padding: 20px; /* Ajoute un peu d'espace autour */
-  max-width: 80%; /* Limite la largeur maximale de la grille */
+  max-width: 60%; /* Limite la largeur maximale de la grille */
   box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur */
   position: relative; /* Positionnement relatif pour les éléments enfants */
 }
