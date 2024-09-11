@@ -1,10 +1,11 @@
 /* Background général de la page */
 body {
-  background-color: #0a055a;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  margin: 1;
-  padding: 20px;
+  background-color: #a3f2fc; /* Bleu pâle */
+  background-image: 
+    radial-gradient(circle at 25px 25px, rgba(173, 216, 230, 0.533) 20%, transparent 20%), 
+    radial-gradient(circle at 75px 75px, rgba(173, 216, 230, 0.479) 20%, transparent 20%);
+  background-size: 100px 100px; /* Taille des motifs géométriques */
+  background-repeat: repeat; /* Répète les motifs pour remplir l'arrière-plan */
 }
 
 /* Style du titre "Select Your Character" */
