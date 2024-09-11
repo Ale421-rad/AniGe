@@ -1,9 +1,9 @@
 /* Background général de la page */
 body {
-  background-color: #aedcff; /* Bleu pâle */
+  background-color: radial-gradient(closest-side, #040055, #9ec0ff);
   font-family: Arial, sans-serif;
   text-align: center;
-  margin: 0;
+  margin: 1;
   padding: 20px;
 }
 
@@ -30,7 +30,7 @@ h1 {
   margin: 0 auto; /* Centre le conteneur sur la page */
   padding: 20px; /* Ajoute un peu d'espace autour */
   max-width: 60%; /* Limite la largeur maximale de la grille */
-  background-color: radial-gradient(closest-side, #040055, #9ec0ff);
+  background-color: #aedcff;
   border-radius: 15px; /* Coins arrondis pour la grille */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Légère ombre portée */
 }
