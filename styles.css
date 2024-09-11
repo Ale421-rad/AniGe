@@ -35,45 +35,38 @@ h1 {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Légère ombre portée */
 }
 
-/* Style for each character image */
+/* Styles pour chaque personnage */
 .character {
-  width: 150%; /* Adapte la largeur de l'image à la boîte */
-  height: 100%; /* Adapte la hauteur de l'image à la boîte */
-  max-width: 150px; /* Limite la largeur maximale des images */
-  max-height: 150px; /* Limite la hauteur maximale des images */
-  object-fit: contain; /* Garde les proportions des images */
-  border-radius: 10px; /* Coins arrondis pour une apparence plus douce */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajoute une ombre légère pour mettre en valeur les images */
-  transition: transform 0.3s; /* Animation lors du survol */
-  position: relative; /* Positionnement relatif pour les pseudo-éléments */
-  display: block; /* Assure que l'image est un bloc */
-  margin: 0 auto; /* Centre l'image à l'intérieur de son conteneur */
+  position: relative; /* Positionne de manière relative pour que l'enfant puisse être positionné de manière absolue */
+  width: 100%; /* Adapte la taille du conteneur à la grille */
+  overflow: hidden; /* Cache tout ce qui dépasse du conteneur */
 }
 
-/* Hover effect for the character images */
-.character:hover {
-  transform: scale(1.05);
+.character img {
+  width: 100%; /* Adapte la largeur de l'image au conteneur */
+  height: auto; /* Conserve le ratio de l'image */
+  display: block; /* Supprime l'espace blanc sous l'image */
+  transition: transform 0.3s ease; /* Ajoute une transition lors du survol */
 }
 
-/* Add a pseudo-element for the character name */
-.character::after {
-  content: attr(data-name); /* Affiche le nom du personnage */
-  position: absolute;
-  background-color: rgba(130, 182, 241, 0.253); /* Semi-transparent black background */
-  color: rgb(0, 2, 100);
-  padding: 5px 10px;
-  border-radius: 5px;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  white-space: nowrap;
-  font-size: 14px;
-  opacity: 0; /* Rend le texte invisible par défaut */
-  transition: opacity 0.3s; /* Animation de l'apparition du texte */
-  pointer-events: none; /* Empêche les interactions avec le texte */
-  z-index: 10; /* Assure que le texte soit au-dessus de l'image */
+.character-name {
+  position: absolute; /* Position absolue par rapport au conteneur parent (.character) */
+  bottom: 0; /* Positionne le texte en bas de l'image */
+  left: 0; /* Aligne le texte à gauche */
+  right: 0; /* Aligne le texte à droite */
+  background-color: rgba(0, 0, 0, 0.6); /* Fond semi-transparent noir */
+  color: white; /* Couleur du texte en blanc */
+  padding: 5px; /* Espacement autour du texte */
+  text-align: center; /* Centre le texte horizontalement */
+  opacity: 0; /* Cache le texte par défaut */
+  transition: opacity 0.3s ease; /* Transition douce de l'opacité */
 }
-/* Show the character name on hover */
-.character:hover::after {
-  opacity: 1; /* Make visible on hover */
+
+/* Effet lors du survol */
+.character:hover .character-name {
+  opacity: 1; /* Affiche le texte lors du survol */
+}
+
+.character:hover img {
+  transform: scale(1.05); /* Légèrement agrandit l'image lors du survol */
 }
