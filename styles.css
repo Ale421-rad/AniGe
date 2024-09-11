@@ -24,7 +24,7 @@ h1 {
 /* Style for the character selection area */
 #character-selection {
   display: grid; /* Utilise une grille pour organiser les images */
-  grid-template-columns: repeat(5, 1fr); /* 5 colonnes de même largeur */
+  grid-template-columns: repeat(3, 1fr); /* 3 colonnes de même largeur */
   gap: 10px; /* Espacement entre les images */
   justify-content: center; /* Centre la grille horizontalement */
   margin: 0 auto; /* Centre le conteneur sur la page */
