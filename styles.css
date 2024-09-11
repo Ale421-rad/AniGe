@@ -61,7 +61,8 @@ h1 {
   left: 0; /* Aligne le texte à gauche */
   right: 0; /* Aligne le texte à droite */
   background-color: rgba(175, 243, 252, 1); /* Fond semi-transparent noir */
-  color: rgb(0, 0, 72); /* Couleur du texte en blanc */
+  color: rgb(0, 0, 108); /* Couleur du texte en blanc */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   padding: 5px; /* Espacement autour du texte */
   text-align: center; /* Centre le texte horizontalement */
   opacity: 0; /* Cache le texte par défaut */
