@@ -60,7 +60,7 @@ h1 {
   bottom: 0; /* Positionne le texte en bas de l'image */
   left: 0; /* Aligne le texte à gauche */
   right: 0; /* Aligne le texte à droite */
-  background-color: rgba(0, 230, 246, 0.181); /* Fond semi-transparent noir */
+  background-color: rgba(175, 243, 252, 1); /* Fond semi-transparent noir */
   color: rgb(0, 0, 72); /* Couleur du texte en blanc */
   padding: 5px; /* Espacement autour du texte */
   text-align: center; /* Centre le texte horizontalement */
