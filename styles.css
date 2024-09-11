@@ -1,7 +1,7 @@
 /* Background général de la page */
 body {
   background-color: #aff3fc; /* Couleur de fond par défaut */
-  background-image: radial-gradient(circle, #001f3f, #aff3fc); /* Dégradé du bleu nuit au bleu pâle */
+  background-image: radial-gradient(circle, #aff3fc, #00033f); /* Dégradé du bleu nuit au bleu pâle */
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
