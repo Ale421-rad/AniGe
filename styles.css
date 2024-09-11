@@ -1,9 +1,9 @@
 /* Background général de la page */
 body {
-  background-color: #9bd5fc; /* Bleu pâle */
+  background-color: radial-gradient(closest-side, #09006a, #c6e2ff); /* Dégradé de bleu */
   background-image: 
-    radial-gradient(circle, rgba(173, 216, 230, 0.3) 20%, transparent 20%), 
-    radial-gradient(circle, rgba(173, 216, 230, 0.3) 20%, transparent 20%);
+    radial-gradient(rgb(0, 43, 153) 20%), 
+    radial-gradient(rgb(33, 49, 82) 20%);
   background-position: 0 0, 50px 50px; /* Positionne les motifs en décalage */
   background-size: 100px 100px; /* Taille des motifs géométriques */
 }
@@ -31,7 +31,7 @@ h1 {
   margin: 0 auto; /* Centre le conteneur sur la page */
   padding: 20px; /* Ajoute un peu d'espace autour */
   max-width: 60%; /* Limite la largeur maximale de la grille */
-  background-color: white; /* Conserve un fond blanc pour le conteneur */
+  background-color: rgba(164, 235, 251, 0.612); /* Conserve un fond blanc pour le conteneur */
   border-radius: 15px; /* Coins arrondis pour la grille */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Légère ombre portée */
 }
