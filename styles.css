@@ -35,18 +35,24 @@ h1 {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Légère ombre portée */
 }
 
-/* Styles pour chaque personnage */
-.character {
-  position: relative; /* Positionne de manière relative pour que l'enfant puisse être positionné de manière absolue */
-  width: 100%; /* Adapte la taille du conteneur à la grille */
-  overflow: hidden; /* Cache tout ce qui dépasse du conteneur */
+/* Style for each character image */
+.character img {
+  width: 150%; /* Adapte la largeur de l'image à la boîte */
+  height: 100%; /* Adapte la hauteur de l'image à la boîte */
+  max-width: 150px; /* Limite la largeur maximale des images */
+  max-height: 150px; /* Limite la hauteur maximale des images */
+  object-fit: contain; /* Garde les proportions des images */
+  border-radius: 10px; /* Coins arrondis pour une apparence plus douce */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajoute une ombre légère pour mettre en valeur les images */
+  transition: transform 0.3s; /* Animation lors du survol */
+  position: relative; /* Positionnement relatif pour les pseudo-éléments */
+  display: block; /* Assure que l'image est un bloc */
+  margin: 0 auto; /* Centre l'image à l'intérieur de son conteneur */
 }
 
-.character img {
-  width: 100%; /* Adapte la largeur de l'image au conteneur */
-  height: auto; /* Conserve le ratio de l'image */
-  display: block; /* Supprime l'espace blanc sous l'image */
-  transition: transform 0.3s ease; /* Ajoute une transition lors du survol */
+/* Hover effect for the character images */
+.character:hover .character img {
+  transform: scale(1.05);
 }
 
 .character-name {
@@ -65,8 +71,4 @@ h1 {
 /* Effet lors du survol */
 .character:hover .character-name {
   opacity: 1; /* Affiche le texte lors du survol */
-}
-
-.character:hover img {
-  transform: scale(1.05); /* Légèrement agrandit l'image lors du survol */
 }
