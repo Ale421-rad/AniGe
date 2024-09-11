@@ -52,6 +52,7 @@ h1 {
   transition: transform 0.3s; /* Animation lors du survol */
   display: block; /* Assure que l'image est un bloc */
   margin: 0 auto; /* Centre l'image à l'intérieur de son conteneur */
+  will-change: transform; /* Optimisation pour la performance */
 }
 
 .character-name {
@@ -72,6 +73,6 @@ h1 {
   opacity: 1; /* Affiche le texte lors du survol */
 }
 
-.character:hover .character img {
-  transform: scale(1.05);
+.character:hover img {
+  transform: scale(1.1); /* Agrandit l'image de 10% lors du survol */
 }
