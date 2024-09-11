@@ -1,11 +1,10 @@
 /* Background général de la page */
 body {
-  background-color: radial-gradient(closest-side, #09006a, #c6e2ff); /* Dégradé de bleu */
-  background-image: 
-    radial-gradient(rgb(0, 43, 153) 20%), 
-    radial-gradient(rgb(33, 49, 82) 20%);
-  background-position: 0 0, 50px 50px; /* Positionne les motifs en décalage */
-  background-size: 100px 100px; /* Taille des motifs géométriques */
+  background-color: radial-gradient(closest-side, #040055, #9ec0ff); /* Bleu gradient */
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
 }
 
 /* Style du titre "Select Your Character" */
