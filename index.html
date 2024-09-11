@@ -110,6 +110,39 @@
       <span class="character-name">Gundam Pilot</span>
     </div>
   </div>
-  <!--<script src="script.js"></script> -->
+  
+<!-- Page de confirmation -->
+<div id="confirmation-page" style="display: none;">
+  <h1>Confirm Your Selection</h1>
+  <div id="selected-character">
+      <img id="confirm-image" src="" alt="Character">
+      <h2 id="confirm-name"></h2>
+      <p id="confirm-special"></p>
+      <blockquote id="confirm-quote"></blockquote>
+  </div>
+  <button id="confirm-button">Confirm</button>
+  <button id="back-button">Go Back</button>
+</div>
+
+<!-- Page fiche personnage -->
+<div id="character-page" style="display: none;">
+  <h1 id="character-name"></h1>
+  <div class="character-sheet">
+      <img id="character-image" src="" alt="Character Image">
+      <div class="character-stats">
+          <p><strong>Level (Lvl):</strong> <span id="level">1</span></p>
+          <p><strong>Experience Points (XP):</strong> <span id="xp">0</span></p>
+          <p><strong>Action Points (PA):</strong> <span id="pa">1</span></p>
+          <p><strong>Cards in Hand (CA):</strong> <span id="ca">3</span></p>
+          <p><strong>Spell Cards (SP):</strong> <span id="sp">0</span></p>
+          <p><strong>Bonus Points (BP):</strong> <span id="bp">0</span></p>
+      </div>
+  </div>
+  <button id="reset-button">Reset</button>
+  <input type="number" id="xp-input" placeholder="Change XP">
+  <button id="xp-change-button">Change XP</button>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
