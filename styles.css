@@ -1,10 +1,14 @@
 /* Background général de la page */
 body {
-  background-color: #00133f; /* Couleur de fond par défaut */
-  background-image: radial-gradient(circle, #aff3fc, #00133f); /* Dégradé du bleu pâle au bleu nuit */
+  background-color: #00113f; /* Couleur de fond par défaut, sombre */
+  background-image: radial-gradient(circle at center, #aff3fc 0%, #00113f 60%); /* Dégradé du bleu pâle au bleu nuit */
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
+  display: flex; /* Utilise Flexbox pour centrer le contenu */
+  justify-content: center; /* Centre horizontalement le contenu */
+  align-items: center; /* Centre verticalement le contenu */
+  min-height: 100vh; /* Assure que la page prend toute la hauteur */
 }
 
 /* Style du titre "Select Your Character" */
