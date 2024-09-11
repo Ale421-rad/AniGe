@@ -1,11 +1,10 @@
 /* Background général de la page */
 body {
-  background-color: #a3f2fc; /* Bleu pâle */
-  background-image: 
-    radial-gradient(circle at 25px 25px, rgba(173, 216, 230, 0.533) 20%, transparent 20%), 
-    radial-gradient(circle at 75px 75px, rgba(173, 216, 230, 0.479) 20%, transparent 20%);
-  background-size: 100px 100px; /* Taille des motifs géométriques */
-  background-repeat: repeat; /* Répète les motifs pour remplir l'arrière-plan */
+  background-color: #aff3fc; /* Couleur de fond par défaut */
+  background-image: radial-gradient(circle, #001f3f, #aff3fc); /* Dégradé du bleu nuit au bleu pâle */
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
 }
 
 /* Style du titre "Select Your Character" */
@@ -31,7 +30,7 @@ h1 {
   margin: 0 auto; /* Centre le conteneur sur la page */
   padding: 20px; /* Ajoute un peu d'espace autour */
   max-width: 60%; /* Limite la largeur maximale de la grille */
-  background-color: #aedcff;
+  background-color: #aff3fc;
   border-radius: 15px; /* Coins arrondis pour la grille */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Légère ombre portée */
 }
