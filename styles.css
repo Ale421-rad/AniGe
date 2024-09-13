@@ -156,42 +156,42 @@ h1 {
 }
 
 .confirmation-buttons button {
-  padding: 20px 40px;
+  padding: 15px 35px;
   font-size: 32px;
   border: 5px solid #007bff;
   cursor: pointer;
 }
 
 button#confirm-button {
-  padding: 20px 40px;
+  padding: 15px 35px;
   font-size: 32px;
-  background-color: #18c2ce3d;; 
+  background-color: #3abcc5a4;; 
   color: #007bff;
   border-radius: 25px;  
-  transition: background-color 0.3s, color 0.3s; 
+  transition: background-color 0.3s, color 0.3s, padding 0.3s, font-size 0.3s; 
 }
 
 button#confirm-button:hover {
-  background-color: #007bff73; 
-  color: #85c0ff;
-  padding: 21px 42px;
-  font-size: 34px;
+  background-color: #3abcc53f; 
+  color: #007bff;
+  padding: 16px 38px;
+  font-size: 35px;
 }
 
 button#back-button {
-  padding: 20px 40px;
+  padding: 15px 35px;
   font-size: 32px;
-  background-color: #18c2ce3d;; 
+  background-color: #3abcc5a4;; 
   color: #007bff; 
   border-radius: 25px;
-  transition: background-color 0.3s, color 0.3s; 
+  transition: background-color 0.3s, color 0.3s, padding 0.3s, font-size 0.3s; 
 }
 
 button#back-button:hover {
-  background-color: #007bff73; 
-  color: #85c0ff;
-  padding: 21px 42px;
-  font-size: 34px;
+  background-color: #3abcc53f; 
+  color: #007bff;
+  padding: 16px 38px;
+  font-size: 35px;
 }
 
 
