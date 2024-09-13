@@ -92,33 +92,70 @@ resetButton.addEventListener('click', function() {
 xpChangeButton.addEventListener('click', function() {
     const newXP = parseInt(xpInput.value);
     if (!isNaN(newXP) && newXP >= 0) {
-        updateCharacterStats(newXP);
+        addXP(newXP);
     }
 });
 
 // Fonction pour mettre à jour les statistiques du personnage
-function updateCharacterStats(newXP) {
-    characterStats.xp = newXP;
+let currentXP = 0;
+let currentLevel = 1;
 
-    if (newXP >= 250) {
-        characterStats.level = 6; characterStats.pa = 10; characterStats.ca = 7; characterStats.sp = 3;
-    } else if (newXP >= 130) {
-        characterStats.level = 5; characterStats.pa = 5; characterStats.ca = 7; characterStats.sp = 3;
-    } else if (newXP >= 70) {
-        characterStats.level = 4; characterStats.pa = 4; characterStats.ca = 7; characterStats.sp = 1;
-    } else if (newXP >= 30) {
-        characterStats.level = 3; characterStats.pa = 3; characterStats.ca = 5; characterStats.sp = 1;
-    } else if (newXP >= 10) {
-        characterStats.level = 2; characterStats.pa = 2; characterStats.ca = 5; characterStats.sp = 0;
-    } else {
-        characterStats.level = 1; characterStats.pa = 1; characterStats.ca = 3; characterStats.sp = 0;
+function addXP(amount) {
+    if (currentLevel < 6) {
+        currentXP += amount;
+        document.getElementById("xp").textContent = currentXP;
+        checkLevelUp();
+    }
+}
+
+function checkLevelUp() {
+    let levelChanged = false;
+
+    if (currentLevel === 1 && currentXP >= 10) {
+        currentLevel = 2;
+        levelChanged = true;
+    } else if (currentLevel === 2 && currentXP >= 20) {
+        currentLevel = 3;
+        levelChanged = true;
+    } else if (currentLevel === 3 && currentXP >= 40) {
+        currentLevel = 4;
+        levelChanged = true;
+    } else if (currentLevel === 4 && currentXP >= 60) {
+        currentLevel = 5;
+        levelChanged = true;
+    } else if (currentLevel === 5 && currentXP >= 100) {
+        currentLevel = 6;
+        levelChanged = true;
     }
 
-    document.getElementById('level').textContent = characterStats.level;
-    document.getElementById('xp').textContent = characterStats.xp;
-    document.getElementById('pa').textContent = characterStats.pa;
-    document.getElementById('ca').textContent = characterStats.ca;
-    document.getElementById('sp').textContent = characterStats.sp;
+    if (levelChanged) {
+        currentXP = 0;
+        document.getElementById("xp").textContent = currentXP;
+        updateCharacterStats();
+    }
+}
+
+function updateCharacterStats() {
+    let pa = 1, ca = 3, sp = 0, bp = 0;
+
+    switch (currentLevel) {
+        case 2:
+            pa = 2; ca = 5; sp = 0; break;
+        case 3:
+            pa = 3; ca = 5; sp = 1; break;
+        case 4:
+            pa = 4; ca = 7; sp = 1; break;
+        case 5:
+            pa = 5; ca = 7; sp = 3; break;
+        case 6:
+            pa = 10; ca = 7; sp = 3; break;
+    }
+
+    document.getElementById("level").textContent = currentLevel;
+    document.getElementById("pa").textContent = pa;
+    document.getElementById("ca").textContent = ca;
+    document.getElementById("sp").textContent = sp;
+    document.getElementById("bp").textContent = bp; // Default, adjust based on the character
 }
 
 // Fonction pour réinitialiser les statistiques du personnage
