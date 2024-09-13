@@ -20,55 +20,89 @@ const characterStats = {
     bp: 0
 };
 
-// Gestion de la sélection de personnage
-document.querySelectorAll('.character').forEach(character => {
-    character.addEventListener('click', function() {
-        const name = this.dataset.name;
-        const special = this.dataset.special;
-        const quote = this.dataset.quote;
-        const imageSrc = this.querySelector('img').src;
+function showElement(element) {
+    element.classList.remove('fade-out');
+    element.classList.add('fade-in');
+    element.style.display = 'block';
+}
 
-        document.getElementById('confirm-image').src = imageSrc;
-        document.getElementById('confirm-name').textContent = name;
-        document.getElementById('confirm-special').textContent = special;
-        document.getElementById('confirm-quote').textContent = `"${quote}"`;
+function hideElement(element) {
+    element.classList.remove('fade-in');
+    element.classList.add('fade-out');
+    setTimeout(() => {
+        element.style.display = 'none';
+    }, 500); // Correspond à la durée de l'animation CSS (0.5s)
+}
+
+// Gestion de la sélection de personnage
+document.addEventListener("DOMContentLoaded", function () {
+    const characters = document.querySelectorAll(".character");
+
+    characters.forEach(character => {
+        character.addEventListener("click", function () {
+            // Extraire le nom du personnage à partir de l'élément span
+            const characterName = character.querySelector(".character-name").textContent;
+            const characterSpecial1 = character.getAttribute("data-special1");
+            const characterSpecial2 = character.getAttribute("data-special2");
+            const characterQuote = character.getAttribute("data-quote");
+            const characterImage = character.querySelector("img").src;
+
+            // Mettre à jour la page de confirmation avec les informations du personnage
+            document.getElementById("confirm-name").textContent = characterName;
+            document.getElementById("confirm-special").textContent = `${characterSpecial1} \n ${characterSpecial2}`;
+            document.getElementById("confirm-quote").textContent = `"${characterQuote}"`;
+            document.getElementById("confirm-image").src = characterImage;
 
         characterSelection.style.display = 'none';
         confirmationPage.style.display = 'block';
+
+        hideElement(characterSelection);
+        showElement(confirmationPage);
     });
+});
 });
 
 // Bouton de confirmation
 confirmButton.addEventListener('click', function() {
-    const name = document.getElementById('confirm-name').textContent;
-    const imageSrc = document.getElementById('confirm-image').src;
-
-    document.getElementById('character-name').textContent = name;
-    document.getElementById('character-image').src = imageSrc;
+    
+ // Transférer les données vers la page fiche personnage
+ document.getElementById("character-name").textContent = document.getElementById("confirm-name").textContent;
+ document.getElementById("character-image").src = document.getElementById("confirm-image").src;
 
     confirmationPage.style.display = 'none';
     characterPage.style.display = 'block';
 
     resetCharacterStats(); // Reset stats when confirming
+
+    hideElement(confirmationPage);
+    showElement(characterPage);
 });
 
 // Bouton retour
 backButton.addEventListener('click', function() {
+    
     confirmationPage.style.display = 'none';
     characterSelection.style.display = 'block';
+
+    hideElement(confirmationPage);
+    showElement(characterSelection);
 });
 
 // Bouton reset
 resetButton.addEventListener('click', function() {
+    
     characterPage.style.display = 'none';
     characterSelection.style.display = 'block';
     resetCharacterStats();
+
+    hideElement(characterPage);
+    showElement(confirmationPage);
 });
 
 // Bouton changement XP
 xpChangeButton.addEventListener('click', function() {
     const newXP = parseInt(xpInput.value);
-    if (!isNaN(newXP)) {
+    if (!isNaN(newXP) && newXP >= 0) {
         updateCharacterStats(newXP);
     }
 });
