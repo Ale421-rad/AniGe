@@ -16,7 +16,7 @@ const characterStats = {
     xp: 0,
     pa: 1,
     ca: 3,
-    sp: 0,
+    sc: 0,
     bp: 0
 };
 
@@ -46,12 +46,23 @@ document.addEventListener("DOMContentLoaded", function () {
             const characterSpecial2 = character.getAttribute("data-special2");
             const characterQuote = character.getAttribute("data-quote");
             const characterImage = character.querySelector("img").src;
+            const bpName = character.getAttribute("data-bp-name");
+            const bpValue = character.getAttribute("data-bp-value");
 
             // Mettre à jour la page de confirmation avec les informations du personnage
             document.getElementById("confirm-name").textContent = characterName;
             document.getElementById("confirm-special").innerHTML = `${characterSpecial1}<br>${characterSpecial2}`;
             document.getElementById("confirm-quote").textContent = `"${characterQuote}"`;
             document.getElementById("confirm-image").src = characterImage;
+
+            // Affiche ou cache le BP selon qu'il est défini ou non
+            if (bpName && bpValue) {
+                document.getElementById("bp-container").style.display = "block";
+                document.getElementById("bp-name").textContent = bpName;
+                document.getElementById("bp").textContent = bpValue;
+            } else {
+                document.getElementById("bp-container").style.display = "none";
+            }
 
         hideElement(characterSelection);
         showElement(confirmationPage);
@@ -136,25 +147,25 @@ function checkLevelUp() {
 }
 
 function updateCharacterStats() {
-    let pa = 1, ca = 3, sp = 0, bp = 0;
+    let pa = 1, ca = 3, sc = 0, bp = 0;
 
     switch (currentLevel) {
         case 2:
-            pa = 2; ca = 5; sp = 0; break;
+            pa = 2; ca = 5; sc = 0; break;
         case 3:
-            pa = 3; ca = 5; sp = 1; break;
+            pa = 3; ca = 5; sc = 1; break;
         case 4:
-            pa = 4; ca = 7; sp = 1; break;
+            pa = 4; ca = 7; sc = 1; break;
         case 5:
-            pa = 5; ca = 7; sp = 3; break;
+            pa = 5; ca = 7; sc = 3; break;
         case 6:
-            pa = 10; ca = 7; sp = 3; break;
+            pa = 10; ca = 7; sc = 3; break;
     }
 
     document.getElementById("level").textContent = currentLevel;
     document.getElementById("pa").textContent = pa;
     document.getElementById("ca").textContent = ca;
-    document.getElementById("sp").textContent = sp;
+    document.getElementById("sc").textContent = sc;
     document.getElementById("bp").textContent = bp; // Default, adjust based on the character
 }
 
@@ -164,13 +175,13 @@ function resetCharacterStats() {
     characterStats.xp = 0;
     characterStats.pa = 1;
     characterStats.ca = 3;
-    characterStats.sp = 0;
+    characterStats.sc = 0;
     characterStats.bp = 0;
 
     document.getElementById('level').textContent = characterStats.level;
     document.getElementById('xp').textContent = characterStats.xp;
     document.getElementById('pa').textContent = characterStats.pa;
     document.getElementById('ca').textContent = characterStats.ca;
-    document.getElementById('sp').textContent = characterStats.sp;
+    document.getElementById('sc').textContent = characterStats.sc;
     xpInput.value = '';
 }
