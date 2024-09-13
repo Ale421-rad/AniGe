@@ -22,7 +22,7 @@ h1 {
 }
 
 /* Style for the character selection area */
-#character-grid {
+#character-selection {
   display: grid; /* Utilise une grille pour organiser les images */
   grid-template-columns: repeat(5, 1fr); 
   gap: 10px; /* Espacement entre les images */
