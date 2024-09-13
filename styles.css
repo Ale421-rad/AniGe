@@ -8,7 +8,7 @@ body {
 }
 
 /* Style du titre "Select Your Character" */
-#character-selection-title {
+#selection-title {
   display: grid; 
   grid-template-columns: repeat(1, 1fr); 
   justify-content: center;
