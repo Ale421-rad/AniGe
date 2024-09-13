@@ -156,15 +156,15 @@ h1 {
 }
 
 .confirmation-buttons button {
-  padding: 40px 80px;
-  font-size: 50px;
+  padding: 20px 40px;
+  font-size: 32px;
   border: 5px solid #007bff;
   cursor: pointer;
 }
 
 button#confirm-button {
-  padding: 40px 80px;
-  font-size: 50px;
+  padding: 20px 40px;
+  font-size: 32px;
   background-color: #18c2ce3d;; 
   color: #007bff;
   border-radius: 25px;  
@@ -174,11 +174,13 @@ button#confirm-button {
 button#confirm-button:hover {
   background-color: #007bff73; 
   color: #85c0ff;
+  padding: 21px 42px;
+  font-size: 34px;
 }
 
 button#back-button {
-  padding: 40px 80px;
-  font-size: 50px;
+  padding: 20px 40px;
+  font-size: 32px;
   background-color: #18c2ce3d;; 
   color: #007bff; 
   border-radius: 25px;
@@ -188,6 +190,8 @@ button#back-button {
 button#back-button:hover {
   background-color: #007bff73; 
   color: #85c0ff;
+  padding: 21px 42px;
+  font-size: 34px;
 }
 
 
