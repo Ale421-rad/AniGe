@@ -105,7 +105,7 @@ resetButton.addEventListener('click', function() {
     resetCharacterStats();
 
     hideElement(characterPage);
-    showElement(confirmationPage);
+    showElement(characterSelection);
 });
 
 // Bouton changement XP
