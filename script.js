@@ -49,12 +49,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Mettre à jour la page de confirmation avec les informations du personnage
             document.getElementById("confirm-name").textContent = characterName;
-            document.getElementById("confirm-special").textContent = `${characterSpecial1} \n ${characterSpecial2}`;
+            document.getElementById("confirm-special").textContent = `${characterSpecial1}<br>${characterSpecial2}`;
             document.getElementById("confirm-quote").textContent = `"${characterQuote}"`;
             document.getElementById("confirm-image").src = characterImage;
-
-        characterSelection.style.display = 'none';
-        confirmationPage.style.display = 'block';
 
         hideElement(characterSelection);
         showElement(confirmationPage);
@@ -69,9 +66,6 @@ confirmButton.addEventListener('click', function() {
  document.getElementById("character-name").textContent = document.getElementById("confirm-name").textContent;
  document.getElementById("character-image").src = document.getElementById("confirm-image").src;
 
-    confirmationPage.style.display = 'none';
-    characterPage.style.display = 'block';
-
     resetCharacterStats(); // Reset stats when confirming
 
     hideElement(confirmationPage);
@@ -80,9 +74,6 @@ confirmButton.addEventListener('click', function() {
 
 // Bouton retour
 backButton.addEventListener('click', function() {
-    
-    confirmationPage.style.display = 'none';
-    characterSelection.style.display = 'block';
 
     hideElement(confirmationPage);
     showElement(characterSelection);
@@ -90,9 +81,7 @@ backButton.addEventListener('click', function() {
 
 // Bouton reset
 resetButton.addEventListener('click', function() {
-    
-    characterPage.style.display = 'none';
-    characterSelection.style.display = 'block';
+
     resetCharacterStats();
 
     hideElement(characterPage);
