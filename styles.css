@@ -109,40 +109,42 @@ h1 {
 #confirmation-page {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centre tous les éléments */
-  justify-content: center; /* Centre verticalement */
+  align-items: center; 
+  justify-content: center; 
   min-height: 100vh;
   text-align: center;
   padding: 20px;
 }
 
-.confirmation-image {
-  width: 150px; /* Garde la taille de l'image du personnage */
-  height: 150px;
-  margin-bottom: 20px;
+.confirmation-image, .character-image {
+  max-width: 150px; 
+    max-height: 150px; 
+    width: auto; 
+    height: auto; 
+    margin-bottom: 20px;
 }
 
 .confirmation-text {
   font-size: 18px;
   margin-bottom: 20px;
-  color: #005b96; /* Couleur contrastée */
+  color: #005b96;
 }
 
 .confirmation-special {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 10px;
-  color: #ff6f61; /* Couleur pour mettre en valeur les pouvoirs spéciaux */
+  color: #000547; 
   padding: 10px;
-  border: 2px solid #ff6f61;
+  border: 2px solid #0011ff;
   border-radius: 5px;
-  background-color: #fff5f5;
+  background-color: #18c2ce9d;
 }
 
 .confirmation-quote {
-  font-size: 16px;
+  font-size: 32px;
   font-style: italic;
-  color: #7a7a7a;
+  color: #000000;
   margin-bottom: 20px;
 }
 
@@ -154,20 +156,20 @@ h1 {
 .confirmation-buttons button {
   padding: 10px 20px;
   font-size: 16px;
-  border: none;
-  border-radius: 5px;
+  border: 2px solid #007bff;
+  border-radius: 25px; 
+  background-color: transparent; 
+  color: #007bff; 
   cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; 
 }
 
-button#confirm-button {
-  background-color: #007bff;
-  color: white;
+/* Effet de survol sur les boutons */
+.confirmation-buttons button:hover {
+  background-color: #007bff; 
+  color: white; 
 }
 
-button#back-button {
-  background-color: #6c757d;
-  color: white;
-}
 
 /* Page de Personnage */
 #character-page {
@@ -176,7 +178,7 @@ button#back-button {
   align-items: center;
   text-align: center;
   padding: 20px;
-  background-color: #f0f4c3;
+  background-color: #000000;
   min-height: 100vh;
 }
 
@@ -184,6 +186,7 @@ button#back-button {
   margin: 20px;
   font-size: 18px;
   line-height: 1.5;
+  color: white;
 }
 
 .character-image {
@@ -202,4 +205,5 @@ button#back-button {
 .character-statistics div {
   margin-bottom: 10px;
   font-size: 16px;
+  color: white;
 }
