@@ -169,14 +169,19 @@ button#confirm-button {
   transition: background-color 0.3s, color 0.3s; 
 }
 
-button#go-back-button {
+button#confirm-button:hover {
+  background-color: #007bff; 
+  color: white;
+  transform: scale(1.0.5); 
+}
+
+button#back-button {
   background-color: #18c2ce3d;; 
   color: #007bff; 
   transition: background-color 0.3s, color 0.3s; 
 }
 
-/* Effet de survol sur les boutons */
-.confirmation-buttons button:hover {
+button#back-button:hover {
   background-color: #007bff; 
   color: white;
   transform: scale(1.0.5); 
