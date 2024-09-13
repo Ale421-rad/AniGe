@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Mettre à jour la page de confirmation avec les informations du personnage
             document.getElementById("confirm-name").textContent = characterName;
-            document.getElementById("confirm-special").textContent = `${characterSpecial1}<br>${characterSpecial2}`;
+            document.getElementById("confirm-special").innerHTML = `${characterSpecial1}<br>${characterSpecial2}`;
             document.getElementById("confirm-quote").textContent = `"${characterQuote}"`;
             document.getElementById("confirm-image").src = characterImage;
 
