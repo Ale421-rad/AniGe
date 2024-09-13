@@ -48,12 +48,21 @@ document.addEventListener("DOMContentLoaded", function () {
             const characterImage = character.querySelector("img").src;
             const bpName = character.getAttribute("data-bp-name");
             const bpValue = character.getAttribute("data-bp-value");
+            const bpLimited = character.getAttribute("data-bp-limited") === "true";
 
             // Mettre à jour la page de confirmation avec les informations du personnage
             document.getElementById("confirm-name").textContent = characterName;
             document.getElementById("confirm-special").innerHTML = `${characterSpecial1}<br>${characterSpecial2}`;
             document.getElementById("confirm-quote").textContent = `"${characterQuote}"`;
             document.getElementById("confirm-image").src = characterImage;
+
+            // Stockage des informations de BP
+            selectedCharacter = {
+                name: characterName,
+                bpName: bpName,
+                bpValue: bpValue,
+                bpLimited: bpLimited
+            };
 
             // Affiche ou cache le BP selon qu'il est défini ou non
             if (bpName && bpValue) {
@@ -110,6 +119,7 @@ xpAddButton.addEventListener('click', function() {
 // Fonction pour mettre à jour les statistiques du personnage
 let currentXP = 0;
 let currentLevel = 1;
+let selectedCharacter = null; // Nouvelle variable pour stocker le personnage sélectionné
 
 function addXP(amount) {
     if (currentLevel < 6) {
@@ -143,11 +153,12 @@ function checkLevelUp() {
         currentXP = 0;
         document.getElementById("xp").textContent = currentXP;
         updateCharacterStats();
+        updateCharacterBP(); // Met à jour le BP à chaque changement de niveau
     }
 }
 
 function updateCharacterStats() {
-    let pa = 1, ca = 3, sc = 0, bp = 0;
+    let pa = 1, ca = 3, sc = 0;
 
     switch (currentLevel) {
         case 2:
@@ -166,7 +177,21 @@ function updateCharacterStats() {
     document.getElementById("pa").textContent = pa;
     document.getElementById("ca").textContent = ca;
     document.getElementById("sc").textContent = sc;
-    document.getElementById("bp").textContent = bp; // Default, adjust based on the character
+}
+
+function updateCharacterBP() {
+    if (selectedCharacter && selectedCharacter.bpName && selectedCharacter.bpValue) {
+        // Si le BP est limité au niveau 1 et que le personnage n'est plus au niveau 1, masquer le BP
+        if (selectedCharacter.bpLimited && currentLevel > 1) {
+            document.getElementById("bp-container").style.display = "none";
+        } else {
+            document.getElementById("bp-container").style.display = "block";
+            document.getElementById("bp-name").textContent = selectedCharacter.bpName;
+            document.getElementById("bp").textContent = selectedCharacter.bpValue;
+        }
+    } else {
+        document.getElementById("bp-container").style.display = "none";
+    }
 }
 
 // Fonction pour réinitialiser les statistiques du personnage
@@ -176,7 +201,6 @@ function resetCharacterStats() {
     characterStats.pa = 1;
     characterStats.ca = 3;
     characterStats.sc = 0;
-    characterStats.bp = 0;
 
     document.getElementById('level').textContent = characterStats.level;
     document.getElementById('xp').textContent = characterStats.xp;
