@@ -8,7 +8,7 @@ const characterPage = document.getElementById('character-page');
 const confirmButton = document.getElementById('confirm-button');
 const backButton = document.getElementById('back-button');
 const resetButton = document.getElementById('reset-button');
-const xpChangeButton = document.getElementById('xp-change-button');
+const xpAddButton = document.getElementById('xp-add-button');
 const xpInput = document.getElementById('xp-input');
 
 const characterStats = {
@@ -89,7 +89,7 @@ resetButton.addEventListener('click', function() {
 });
 
 // Bouton changement XP
-xpChangeButton.addEventListener('click', function() {
+xpAddButton.addEventListener('click', function() {
     const newXP = parseInt(xpInput.value);
     if (!isNaN(newXP) && newXP >= 0) {
         addXP(newXP);
@@ -114,16 +114,16 @@ function checkLevelUp() {
     if (currentLevel === 1 && currentXP >= 10) {
         currentLevel = 2;
         levelChanged = true;
-    } else if (currentLevel === 2 && currentXP >= 20) {
+    } else if (currentLevel === 2 && currentXP >= 30) {
         currentLevel = 3;
         levelChanged = true;
-    } else if (currentLevel === 3 && currentXP >= 40) {
+    } else if (currentLevel === 3 && currentXP >= 70) {
         currentLevel = 4;
         levelChanged = true;
-    } else if (currentLevel === 4 && currentXP >= 60) {
+    } else if (currentLevel === 4 && currentXP >= 130) {
         currentLevel = 5;
         levelChanged = true;
-    } else if (currentLevel === 5 && currentXP >= 100) {
+    } else if (currentLevel === 5 && currentXP >= 250) {
         currentLevel = 6;
         levelChanged = true;
     }
