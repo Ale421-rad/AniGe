@@ -77,3 +77,129 @@ h1 {
 .character:hover img {
   transform: scale(1.1); /* Agrandit l'image de 10% lors du survol */
 }
+
+/* Animation de fondu en entrée et en sortie */
+.fade-in {
+  animation: fadeIn 0.5s forwards;
+}
+
+.fade-out {
+  animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+      opacity: 1;
+  }
+  to {
+      opacity: 0;
+  }
+}
+
+/* Page de Confirmation */
+#confirmation-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centre tous les éléments */
+  justify-content: center; /* Centre verticalement */
+  min-height: 100vh;
+  text-align: center;
+  padding: 20px;
+}
+
+.confirmation-image {
+  width: 150px; /* Garde la taille de l'image du personnage */
+  height: 150px;
+  margin-bottom: 20px;
+}
+
+.confirmation-text {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #005b96; /* Couleur contrastée */
+}
+
+.confirmation-special {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #ff6f61; /* Couleur pour mettre en valeur les pouvoirs spéciaux */
+  padding: 10px;
+  border: 2px solid #ff6f61;
+  border-radius: 5px;
+  background-color: #fff5f5;
+}
+
+.confirmation-quote {
+  font-size: 16px;
+  font-style: italic;
+  color: #7a7a7a;
+  margin-bottom: 20px;
+}
+
+.confirmation-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.confirmation-buttons button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button#confirm-button {
+  background-color: #007bff;
+  color: white;
+}
+
+button#back-button {
+  background-color: #6c757d;
+  color: white;
+}
+
+/* Page de Personnage */
+#character-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  background-color: #f0f4c3;
+  min-height: 100vh;
+}
+
+.character-info {
+  margin: 20px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.character-image {
+  width: 150px; /* Garde la taille de l'image du personnage */
+  height: 150px;
+  margin-bottom: 20px;
+}
+
+.character-statistics {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.character-statistics div {
+  margin-bottom: 10px;
+  font-size: 16px;
+}

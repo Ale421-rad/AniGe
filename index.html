@@ -115,11 +115,11 @@
 <div id="confirmation-page" style="display: none;">
   <h1>Confirm Your Selection</h1>
   <div id="selected-character">
-      <img id="confirm-image" src="" alt="Character">
-      <h2 id="confirm-name"></h2>
-      <p id="confirm-special"></p>
-      <blockquote id="confirm-quote"></blockquote>
-  </div>
+      <img id="confirm-image" class="confirmation-image" src="" alt="Character">
+      <h2 id="confirm-name" class="confirmation-text"></h2>
+      <p id="confirm-special" class="confirmation-special"></p>
+      <blockquote id="confirm-quote" class="confirmation-quote"></blockquote>
+  </div class="confirmation-buttons">
   <button id="confirm-button">Confirm</button>
   <button id="back-button">Go Back</button>
 </div>
@@ -127,9 +127,9 @@
 <!-- Page fiche personnage -->
 <div id="character-page" style="display: none;">
   <h1 id="character-name"></h1>
-  <div class="character-sheet">
-      <img id="character-image" src="" alt="Character Image">
-      <div class="character-stats">
+  <div class="character-info">
+      <img id="character-image" class="character-image" src="" alt="Character Image">
+      <div class="character-statistics">
           <p><strong>Level (Lvl):</strong> <span id="level">1</span></p>
           <p><strong>Experience Points (XP):</strong> <span id="xp">0</span></p>
           <p><strong>Points of Action (PA):</strong> <span id="pa">1</span></p>
