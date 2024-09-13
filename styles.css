@@ -159,11 +159,12 @@ h1 {
   padding: 40px 80px;
   font-size: 50px;
   border: 5px solid #007bff;
-  border-radius: 25px; 
   cursor: pointer;
 }
 
 button#confirm-button {
+  padding: 40px 80px;
+  font-size: 50px;
   background-color: #18c2ce3d;; 
   color: #007bff;
   border-radius: 25px;  
@@ -176,6 +177,8 @@ button#confirm-button:hover {
 }
 
 button#back-button {
+  padding: 40px 80px;
+  font-size: 50px;
   background-color: #18c2ce3d;; 
   color: #007bff; 
   border-radius: 25px;
