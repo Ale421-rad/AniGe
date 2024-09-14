@@ -9,8 +9,6 @@ body {
 
 /* Style du titre "Select Your Character" */
 #selection-header {
-  display:flex;
-  justify-content: center;
   padding: 20px;
   width: 60%;
   margin: 0 auto;
@@ -146,8 +144,6 @@ body {
 }
 
 .confirmation-image, .character-image {
-  display: flex;
-  justify-content: center;
   max-width: 300px; 
   max-height: 300px; 
   width: auto; 
@@ -229,8 +225,6 @@ button#back-button:hover {
 /* Page de Personnage */
 /* Style du cadre */
 #character-frame {
-  display: flex;
-  justify-content: center;
   border: 2px solid #3498db;
   border-radius: 15px;
   padding: 20px;
@@ -329,7 +323,7 @@ button#back-button:hover {
 /* Style du bouton reset */
 #reset-container {
   display: flex;
-  justify-content: center;
+  justify-content: right;
   text-align: right;
   margin-right: 20px;
   margin-top: 20px;
@@ -337,7 +331,7 @@ button#back-button:hover {
 
 #reset-button {
   display: flex;
-  justify-content: center;
+  justify-content: right;
   background-color: #3abcc5a4;
   border: 2px solid #3498db;
   color: #000000;
