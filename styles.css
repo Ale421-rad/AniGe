@@ -9,7 +9,8 @@ body {
 
 /* Style du titre "Select Your Character" */
 #selection-header {
-  display: flex;
+  display:flex;
+  justify-content: center;
   padding: 20px;
   width: 60%;
   margin: 0 auto;
@@ -17,6 +18,7 @@ body {
 
 #character-selection-title {
   display: flex;
+  justify-content: center;
   margin-top: 20px;
   margin-bottom: 20px;
   margin: 0;
@@ -37,7 +39,7 @@ body {
 
 /* Style for the character selection area */
 #character-selection {
-  display: grid, flex; 
+  display: grid; 
   grid-template-columns: repeat(5, 1fr); 
   gap: 10px; 
   justify-content: center; 
@@ -145,6 +147,7 @@ body {
 
 .confirmation-image, .character-image {
   display: flex;
+  justify-content: center;
   max-width: 300px; 
   max-height: 300px; 
   width: auto; 
@@ -227,6 +230,7 @@ button#back-button:hover {
 /* Style du cadre */
 #character-frame {
   display: flex;
+  justify-content: center;
   border: 2px solid #3498db;
   border-radius: 15px;
   padding: 20px;
@@ -266,6 +270,7 @@ button#back-button:hover {
 
 .character-image {
   display: flex;
+  justify-content: center;
   max-width: 300px; 
   max-height: 300px; 
   width: auto; 
@@ -294,6 +299,7 @@ button#back-button:hover {
 
 #xp-add-button {
   display: flex;
+  justify-content: center;
   background-color: #c5a03aa4;
   border: 2px solid #000000;
   color: #002042;
@@ -323,6 +329,7 @@ button#back-button:hover {
 /* Style du bouton reset */
 #reset-container {
   display: flex;
+  justify-content: center;
   text-align: right;
   margin-right: 20px;
   margin-top: 20px;
@@ -330,6 +337,7 @@ button#back-button:hover {
 
 #reset-button {
   display: flex;
+  justify-content: center;
   background-color: #3abcc5a4;
   border: 2px solid #3498db;
   color: #000000;
