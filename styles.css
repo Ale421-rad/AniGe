@@ -201,9 +201,9 @@ button#back-button:hover {
   border: 2px solid #3498db;
   border-radius: 15px;
   padding: 20px;
-  width: 60%;
+  width: 40%;
   margin: 0 auto;
-  background-color: #fffeda;
+  background-color: #dafff9;
 }
 
 /* Image du personnage avec transition */
