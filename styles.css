@@ -196,40 +196,72 @@ button#back-button:hover {
 
 
 /* Page de Personnage */
-#character-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+/* Cadre pour la page personnage */
+.character-frame {
+  border: 3px solid #333;
   padding: 20px;
-  background-color: #000000;
-  min-height: 100vh;
+  margin: 50px auto;
+  width: 80%;
+  position: relative;
+  background-color: #f5f5f5;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
 }
 
-.character-info {
-  margin: 20px;
-  font-size: 18px;
-  line-height: 1.5;
-  color: white;
-}
-
+/* Image du personnage avec transition */
 .character-image {
-  max-width: 150px; 
-  max-height: 150px; 
-  width: auto; 
-  height: auto; 
-  margin-bottom: 20px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 200px; /* Taille fixe pour chaque image */
+  height: auto; /* Garder les proportions de l'image */
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  border: 2px solid #333;
+  border-radius: 5px;
 }
 
-.character-statistics {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
+/* Niveau du personnage */
+.character-level {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 3em;
+  font-weight: bold;
+  color: #333;
 }
 
-.character-statistics div {
-  margin-bottom: 10px;
-  font-size: 16px;
-  color: white;
+/* XP et bouton Add XP */
+.character-xp {
+  position: absolute;
+  top: 100px;
+  right: 20px;
+  font-size: 1.5em;
 }
+
+/* Liste des caractéristiques */
+.character-stats {
+  margin-top: 240px; /* Ajuster selon la hauteur de l'image */
+  padding-left: 250px; /* Espace laissé pour l'image */
+}
+
+/* Bouton Reset en haut à droite */
+.reset-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 2px solid #333;
+  border-radius: 5px;
+  color: #333;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+/* Effet de survol pour le bouton */
+.reset-button:hover {
+  background-color: #333;
+  color: #fff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+

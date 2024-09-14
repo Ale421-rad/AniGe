@@ -153,7 +153,8 @@ function checkLevelUp() {
         currentXP = 0;
         document.getElementById("xp").textContent = currentXP;
         updateCharacterStats();
-        updateCharacterBP(); // Met à jour le BP à chaque changement de niveau
+        updateCharacterBP();
+        updateCharacterDetails();
     }
 }
 
@@ -193,6 +194,227 @@ function updateCharacterBP() {
         document.getElementById("bp-container").style.display = "none";
     }
 }
+
+// Fonction pour mettre à jour l'image et le niveau du personnage
+function updateCharacterDetails() {
+    // Exemple d'images de niveaux pour chaque personnage
+    const characterImages = {
+        "Character 1": [
+            "Ch1/Ch1-L1.png",
+            "Ch1/Ch1-L2.png",
+            "Ch1/Ch1-L3.png",
+            "Ch1/Ch1-L4.png",
+            "Ch1/Ch1-L5.png",
+            "Ch1/Ch1-L6.png"
+        ],
+        "Character 2": [
+            "Ch2/Ch2-L1.png",
+            "Ch2/Ch2-L2.png",
+            "Ch2/Ch2-L3.png",
+            "Ch2/Ch2-L4.png",
+            "Ch2/Ch2-L5.png",
+            "Ch2/Ch2-L6.png"
+        ],
+        "Character 3": [
+            "Ch3/Ch3-L1.png",
+            "Ch3/Ch3-L2.png",
+            "Ch3/Ch3-L3.png",
+            "Ch3/Ch3-L4.png",
+            "Ch3/Ch3-L5.png",
+            "Ch3/Ch3-L6.png"
+        ],
+        "Character 4": [
+            "Ch4/Ch4-L1.png",
+            "Ch4/Ch4-L2.png",
+            "Ch4/Ch4-L3.png",
+            "Ch4/Ch4-L4.png",
+            "Ch4/Ch4-L5.png",
+            "Ch4/Ch4-L6.png"
+        ],
+        "Character 5": [
+            "Ch5/Ch5-L1.png",
+            "Ch5/Ch5-L2.png",
+            "Ch5/Ch5-L3.png",
+            "Ch5/Ch5-L4.png",
+            "Ch5/Ch5-L5.png",
+            "Ch5/Ch5-L6.png"
+        ],
+        "Character 6": [
+            "Ch6/Ch6-L1.png",
+            "Ch6/Ch6-L2.png",
+            "Ch6/Ch6-L3.png",
+            "Ch6/Ch6-L4.png",
+            "Ch6/Ch6-L5.png",
+            "Ch6/Ch6-L6.png"
+        ],
+        "Character 7": [
+            "Ch7/Ch7-L1.png",
+            "Ch7/Ch7-L2.png",
+            "Ch7/Ch7-L3.png",
+            "Ch7/Ch7-L4.png",
+            "Ch7/Ch7-L5.png",
+            "Ch7/Ch7-L6.png"
+        ],
+        "Character 8": [
+            "Ch8/Ch8-L1.png",
+            "Ch8/Ch8-L2.png",
+            "Ch8/Ch8-L3.png",
+            "Ch8/Ch8-L4.png",
+            "Ch8/Ch8-L5.png",
+            "Ch8/Ch8-L6.png"
+        ],
+        "Character 9": [
+            "Ch9/Ch9-L1.png",
+            "Ch9/Ch9-L2.png",
+            "Ch9/Ch9-L3.png",
+            "Ch9/Ch9-L4.png",
+            "Ch9/Ch9-L5.png",
+            "Ch9/Ch9-L6.png"
+        ],
+        "Character 10": [
+            "Ch10/Ch10-L1.png",
+            "Ch10/Ch10-L2.png",
+            "Ch10/Ch10-L3.png",
+            "Ch10/Ch10-L4.png",
+            "Ch10/Ch10-L5.png",
+            "Ch10/Ch10-L6.png"
+        ],
+        "Character 11": [
+            "Ch11/Ch11-L1.png",
+            "Ch11/Ch11-L2.png",
+            "Ch11/Ch11-L3.png",
+            "Ch11/Ch11-L4.png",
+            "Ch11/Ch11-L5.png",
+            "Ch11/Ch11-L6.png"
+        ],
+        "Character 12": [
+            "Ch12/Ch12-L1.png",
+            "Ch12/Ch12-L2.png",
+            "Ch12/Ch12-L3.png",
+            "Ch12/Ch12-L4.png",
+            "Ch12/Ch12-L5.png",
+            "Ch12/Ch12-L6.png"
+        ],
+        "Character 13": [
+            "Ch13/Ch13-L1.png",
+            "Ch13/Ch13-L2.png",
+            "Ch13/Ch13-L3.png",
+            "Ch13/Ch13-L4.png",
+            "Ch13/Ch13-L5.png",
+            "Ch13/Ch13-L6.png"
+        ],
+        "Character 14": [
+            "Ch14/Ch14-L1.png",
+            "Ch14/Ch14-L2.png",
+            "Ch14/Ch14-L3.png",
+            "Ch14/Ch14-L4.png",
+            "Ch14/Ch14-L5.png",
+            "Ch14/Ch14-L6.png"
+        ],
+        "Character 15": [
+            "Ch15/Ch15-L1.png",
+            "Ch15/Ch15-L2.png",
+            "Ch15/Ch15-L3.png",
+            "Ch15/Ch15-L4.png",
+            "Ch15/Ch15-L5.png",
+            "Ch15/Ch15-L6.png"
+        ],
+        "Character 16": [
+            "Ch16/Ch16-L1.png",
+            "Ch16/Ch16-L2.png",
+            "Ch16/Ch16-L3.png",
+            "Ch16/Ch16-L4.png",
+            "Ch16/Ch16-L5.png",
+            "Ch16/Ch16-L6.png"
+        ],
+        "Character 17": [
+            "Ch17/Ch17-L1.png",
+            "Ch17/Ch17-L2.png",
+            "Ch17/Ch17-L3.png",
+            "Ch17/Ch17-L4.png",
+            "Ch17/Ch17-L5.png",
+            "Ch17/Ch17-L6.png"
+        ],
+        "Character 18": [
+            "Ch18/Ch18-L1.png",
+            "Ch18/Ch18-L2.png",
+            "Ch18/Ch18-L3.png",
+            "Ch18/Ch18-L4.png",
+            "Ch18/Ch18-L5.png",
+            "Ch18/Ch18-L6.png"
+        ],
+        "Character 19": [
+            "Ch19/Ch19-L1.png",
+            "Ch19/Ch19-L2.png",
+            "Ch19/Ch19-L3.png",
+            "Ch19/Ch19-L4.png",
+            "Ch19/Ch19-L5.png",
+            "Ch19/Ch19-L6.png"
+        ],
+        "Character 20": [
+            "Ch20/Ch20-L1.png",
+            "Ch20/Ch20-L2.png",
+            "Ch20/Ch20-L3.png",
+            "Ch20/Ch20-L4.png",
+            "Ch20/Ch20-L5.png",
+            "Ch20/Ch20-L6.png"
+        ],
+        "Character 21": [
+            "Ch21/Ch21-L1.png",
+            "Ch21/Ch21-L2.png",
+            "Ch21/Ch21-L3.png",
+            "Ch21/Ch21-L4.png",
+            "Ch21/Ch21-L5.png",
+            "Ch21/Ch21-L6.png"
+        ],
+        "Character 22": [
+            "Ch22/Ch22-L1.png",
+            "Ch22/Ch22-L2.png",
+            "Ch22/Ch22-L3.png",
+            "Ch22/Ch22-L4.png",
+            "Ch22/Ch22-L5.png",
+            "Ch22/Ch22-L6.png"
+        ],
+        "Character 23": [
+            "Ch23/Ch23-L1.png",
+            "Ch23/Ch23-L2.png",
+            "Ch23/Ch23-L3.png",
+            "Ch23/Ch23-L4.png",
+            "Ch23/Ch23-L5.png",
+            "Ch23/Ch23-L6.png"
+        ],
+        "Character 24": [
+            "Ch24/Ch24-L1.png",
+            "Ch24/Ch24-L2.png",
+            "Ch24/Ch24-L3.png",
+            "Ch24/Ch24-L4.png",
+            "Ch24/Ch24-L5.png",
+            "Ch24/Ch24-L6.png"
+        ],
+        "Character 25": [
+            "Ch25/Ch25-L1.png",
+            "Ch25/Ch25-L2.png",
+            "Ch25/Ch25-L3.png",
+            "Ch25/Ch25-L4.png",
+            "Ch25/Ch25-L5.png",
+            "Ch25/Ch25-L6.png"
+        ],
+    };
+
+    const characterName = document.getElementById("character-name").textContent;
+    const level = parseInt(document.getElementById("level").textContent);
+    const newImage = characterImages[characterName][level - 1];
+    const characterImageElement = document.getElementById("character-image");
+
+    // Appliquer une transition douce
+    characterImageElement.style.opacity = 0; 
+
+    setTimeout(() => {
+        characterImageElement.src = newImage; 
+        characterImageElement.style.opacity = 1; 
+    }, 500); 
+}
+
 
 // Fonction pour réinitialiser les statistiques du personnage
 function resetCharacterStats() {
