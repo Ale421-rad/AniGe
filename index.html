@@ -130,21 +130,29 @@
 
 <!-- Page fiche personnage -->
 <div id="character-page" style="display: none;">
-  <button id="reset-button">Reset</button>
+  <div id="reset-container">
+    <button id="reset-button">Reset</button>
+</div>
 
   <h1 id="character-name"></h1>
 
-  <div class="character-frame"></div>
-      <img id="character-image" class="character-image" src="" alt="Character">
-      <div class="character-level">
-        Level (Lvl):<span id="level">1</span>
-      </div>
+  <div id="character-frame">
+    <div id="character-header">
+        <div id="character-image-container">
+          <img id="character-image" class="character-image" src="" alt="Character Image">
+       </div>
 
-      <div class="character-xp">
-        Experience Points (XP):<span id="xp">0</span>
-        <input type="number" id="xp-input" placeholder="Add XP">
-        <button id="xp-add-button">Add XP</button>
+       <div id="character-level-container">
+          <div class="character-level">
+        Level (Lvl):<span id="level">1</span>
+          </div>
+          <div class="character-xp">
+          Experience Points (XP):<span id="xp">0</span>
+          <input type="number" id="xp-input" placeholder="Add XP">
+          <button id="xp-add-button">Add XP</button>
+          </div>
       </div>
+    </div>
 
       <div class="character-stats">
           <p>Points of Action (PA):<span id="pa">1</span></p>
