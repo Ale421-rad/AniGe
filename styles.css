@@ -9,64 +9,64 @@ body {
 
 /* Style du titre "Select Your Character" */
 h1 {
-  font-size: 36px; /* Taille de la police */
-  font-family: 'Arial', sans-serif; /* Police de caractères */
-  text-align: center; /* Centre le texte */
-  margin-bottom: 20px; /* Espace en bas du titre */
-  color: #007BFF; /* Couleur bleue pour le texte */
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Ombre légère pour le texte */
-  background: linear-gradient(to right, #00BFFF, #1E90FF); /* Dégradé de bleu */
-  background-clip: text; /* Applique le dégradé au texte */
-  -webkit-background-clip: text; /* Préfixe pour Safari */
-  color: transparent; /* Rend le texte transparent */
+  font-size: 36px; 
+  font-family: 'Arial', sans-serif; 
+  text-align: center; 
+  margin-bottom: 20px; 
+  color: #007BFF; 
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+  background: linear-gradient(to right, #00BFFF, #1E90FF); 
+  background-clip: text; 
+  -webkit-background-clip: text; 
+  color: transparent; 
 }
 
 /* Style for the character selection area */
 #character-selection {
-  display: grid; /* Utilise une grille pour organiser les images */
+  display: grid; 
   grid-template-columns: repeat(5, 1fr); 
-  gap: 10px; /* Espacement entre les images */
-  justify-content: center; /* Centre la grille horizontalement */
-  margin: 0 auto; /* Centre le conteneur sur la page */
-  padding: 20px; /* Ajoute un peu d'espace autour */
-  max-width: 60%; /* Limite la largeur maximale de la grille */
+  gap: 10px; 
+  justify-content: center; 
+  margin: 0 auto; 
+  padding: 20px; 
+  max-width: 60%; 
   background-color: #aff3fc;
-  border-radius: 15px; /* Coins arrondis pour la grille */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Légère ombre portée */
+  border-radius: 15px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
 }
 
 /* Style for each character image */
 .character {
-  position: relative; /* Positionne de manière relative pour que l'enfant puisse être positionné de manière absolue */
-  width: 100%; /* Adapte la taille du conteneur à la grille */
+  position: relative; 
+  width: 100%; 
 }
 
 .character img {
-  width: 150%; /* Adapte la largeur de l'image à la boîte */
-  height: 100%; /* Adapte la hauteur de l'image à la boîte */
-  max-width: 150px; /* Limite la largeur maximale des images */
-  max-height: 150px; /* Limite la hauteur maximale des images */
-  object-fit: contain; /* Garde les proportions des images */
-  border-radius: 10px; /* Coins arrondis pour une apparence plus douce */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajoute une ombre légère pour mettre en valeur les images */
-  transition: transform 0.3s; /* Animation lors du survol */
-  display: block; /* Assure que l'image est un bloc */
-  margin: 0 auto; /* Centre l'image à l'intérieur de son conteneur */
-  will-change: transform; /* Optimisation pour la performance */
+  width: 150%; 
+  height: 100%; 
+  max-width: 150px; 
+  max-height: 150px; 
+  object-fit: contain; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  transition: transform 0.3s; 
+  display: block; 
+  margin: 0 auto; 
+  will-change: transform; 
 }
 
 .character-name {
-  position: absolute; /* Position absolue par rapport au conteneur parent (.character) */
-  bottom: 0; /* Positionne le texte en bas de l'image */
-  left: 0; /* Aligne le texte à gauche */
-  right: 0; /* Aligne le texte à droite */
-  background-color: rgba(175, 243, 252, 1); /* Fond semi-transparent noir */
-  color: rgb(0, 0, 108); /* Couleur du texte en blanc */
+  position: absolute; 
+  bottom: 0; 
+  left: 0; 
+  right: 0; 
+  background-color: rgba(175, 243, 252, 1); 
+  color: rgb(0, 0, 108); 
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  padding: 5px; /* Espacement autour du texte */
-  text-align: center; /* Centre le texte horizontalement */
-  opacity: 0; /* Cache le texte par défaut */
-  transition: opacity 0.3s ease; /* Transition douce de l'opacité */
+  padding: 5px; 
+  text-align: center; 
+  opacity: 0; 
+  transition: opacity 0.3s ease; 
 }
 
 /* Hover effect for the character images */
@@ -181,7 +181,7 @@ button#confirm-button:hover {
 button#back-button {
   padding: 15px 35px;
   font-size: 32px;
-  background-color: #3abcc5a4;; 
+  background-color: #3abcc5a4;
   color: #007bff; 
   border-radius: 25px;
   transition: background-color 0.3s, color 0.3s, padding 0.3s, font-size 0.3s; 
@@ -215,8 +215,21 @@ button#back-button:hover {
   flex: 1;
 }
 
+#character-header h1 {
+  font-size: 32px;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #007BFF;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(to right, #00BFFF, #1E90FF);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
 
 .character-image {
+  align-items: left; 
   max-width: 200px; 
   max-height: 200px; 
   width: auto; 
@@ -240,11 +253,30 @@ button#back-button:hover {
   font-size: 1.5em;
 }
 
+#xp-add-button {
+  background-color: #c5a03aa4;
+  border: 2px solid #000000;
+  color: #002042;
+  border-radius: 10px;
+  padding: 8px 16px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#xp-add-button:hover {
+  background-color: #c5a03a25; 
+  color: #002042;
+  padding: 9px 17px;
+  font-size: 13px;
+}
+
 /* Style pour la liste des caractéristiques */
 #character-stats {
+  margin-bottom: 20px; 
   list-style-type: none;
-  padding: 0;
-  font-size: 18px;
+  padding: 10px;
+  font-size: 25px;
 }
 
 /* Style du bouton reset */
@@ -255,10 +287,10 @@ button#back-button:hover {
 }
 
 #reset-button {
-  background-color: transparent;
+  background-color: #3abcc5a4;
   border: 2px solid #3498db;
-  color: #3498db;
-  border-radius: 10px;
+  color: #007bff;
+  border-radius: 25px;
   padding: 10px 20px;
   font-size: 14px;
   cursor: pointer;
@@ -266,7 +298,9 @@ button#back-button:hover {
 }
 
 #reset-button:hover {
-  background-color: #3498db;
-  color: white;
+  background-color: #c53a3a59; 
+  color: #007bff;
+  padding: 11px 22px;
+  font-size: 16px;
 }
 
