@@ -8,6 +8,12 @@ body {
 }
 
 /* Style du titre "Select Your Character" */
+#selection-header {
+  padding: 20px;
+  width: 60%;
+  margin: 0 auto;
+}
+
 #character-selection-title {
   margin-top: 20px;
   margin-bottom: 20px;
