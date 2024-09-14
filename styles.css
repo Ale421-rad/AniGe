@@ -9,12 +9,14 @@ body {
 
 /* Style du titre "Select Your Character" */
 #selection-header {
+  display: flex;
   padding: 20px;
   width: 60%;
   margin: 0 auto;
 }
 
 #character-selection-title {
+  display: flex;
   margin-top: 20px;
   margin-bottom: 20px;
   margin: 0;
@@ -35,7 +37,7 @@ body {
 
 /* Style for the character selection area */
 #character-selection {
-  display: grid; 
+  display: grid, flex; 
   grid-template-columns: repeat(5, 1fr); 
   gap: 10px; 
   justify-content: center; 
@@ -142,6 +144,7 @@ body {
 }
 
 .confirmation-image, .character-image {
+  display: flex;
   max-width: 300px; 
   max-height: 300px; 
   width: auto; 
@@ -223,6 +226,7 @@ button#back-button:hover {
 /* Page de Personnage */
 /* Style du cadre */
 #character-frame {
+  display: flex;
   border: 2px solid #3498db;
   border-radius: 15px;
   padding: 20px;
@@ -261,6 +265,7 @@ button#back-button:hover {
 }
 
 .character-image {
+  display: flex;
   max-width: 300px; 
   max-height: 300px; 
   width: auto; 
@@ -288,6 +293,7 @@ button#back-button:hover {
 }
 
 #xp-add-button {
+  display: flex;
   background-color: #c5a03aa4;
   border: 2px solid #000000;
   color: #002042;
@@ -316,12 +322,14 @@ button#back-button:hover {
 
 /* Style du bouton reset */
 #reset-container {
+  display: flex;
   text-align: right;
   margin-right: 20px;
   margin-top: 20px;
 }
 
 #reset-button {
+  display: flex;
   background-color: #3abcc5a4;
   border: 2px solid #3498db;
   color: #000000;
