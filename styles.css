@@ -117,8 +117,8 @@ h1 {
 }
 
 .confirmation-image, .character-image {
-  max-width: 200px; 
-  max-height: 200px; 
+  max-width: 300px; 
+  max-height: 300px; 
   width: auto; 
   height: auto; 
   margin-bottom: 20px;
@@ -228,10 +228,16 @@ button#back-button:hover {
   color: transparent;
 }
 
+#character-sheet {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
 .character-image {
-  align-items: left; 
-  max-width: 200px; 
-  max-height: 200px; 
+  max-width: 300px; 
+  max-height: 300px; 
   width: auto; 
   height: auto; 
   transition: transform 0.5s ease, opacity 0.5s ease;
@@ -248,7 +254,7 @@ button#back-button:hover {
 }
 
 /* XP et bouton Add XP */
-.character-xp {
+#character-sheet h2 {
   text-align: right;
   font-size: 1.5em;
 }
@@ -272,7 +278,7 @@ button#back-button:hover {
 }
 
 /* Style pour la liste des caractéristiques */
-#character-stats {
+.character-stats {
   margin-bottom: 20px; 
   list-style-type: none;
   padding: 10px;
