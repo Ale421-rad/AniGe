@@ -1,7 +1,8 @@
 // JavaScript pour gérer la sélection de personnage, confirmation et fiche personnage
 
 // Référence des éléments DOM
-const characterSelection = document.getElementById('selection header');
+const SelectionPage = document.getElementById('selection-header');
+const characterSelection = document.getElementById('character-selection');
 const confirmationPage = document.getElementById('confirmation-page');
 const characterPage = document.getElementById('character-page');
 
@@ -73,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("bp-container").style.display = "none";
             }
 
-        hideElement(characterSelection);
+        hideElement(SelectionPage);
         showElement(confirmationPage);
     });
 });
@@ -96,7 +97,7 @@ confirmButton.addEventListener('click', function() {
 backButton.addEventListener('click', function() {
 
     hideElement(confirmationPage);
-    showElement(characterSelection);
+    showElement(SelectionPage);
 });
 
 // Bouton reset
@@ -105,7 +106,7 @@ resetButton.addEventListener('click', function() {
     resetCharacterStats();
 
     hideElement(characterPage);
-    showElement(characterSelection);
+    showElement(SelectionPage);
 });
 
 // Bouton changement XP
