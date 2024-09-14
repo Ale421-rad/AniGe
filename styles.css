@@ -8,7 +8,13 @@ body {
 }
 
 /* Style du titre "Select Your Character" */
-h1 {
+#character-selection-title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin: 0;
+}
+
+#character-selection-title h1 {
   font-size: 36px; 
   font-family: 'Arial', sans-serif; 
   text-align: center; 
@@ -286,6 +292,7 @@ button#back-button:hover {
   list-style-type: none;
   padding: 10px;
   font-size: 25px;
+  font-weight: bold;
 }
 
 /* Style du bouton reset */
