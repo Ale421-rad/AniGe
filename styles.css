@@ -207,12 +207,20 @@ button#back-button:hover {
 }
 
 /* Image du personnage avec transition */
+#character-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+
 .character-image {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 200px; /* Taille fixe pour chaque image */
-  height: auto; /* Garder les proportions de l'image */
+  max-width: 200px; 
+  max-height: 200px; 
+  width: auto; 
+  height: auto; 
   transition: transform 0.5s ease, opacity 0.5s ease;
   border: 2px solid #333;
   border-radius: 5px;
@@ -220,24 +228,15 @@ button#back-button:hover {
 
 /* Niveau du personnage */
 .character-level {
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  text-align: right;
   font-size: 3em;
   font-weight: bold;
   color: #333;
 }
 
-#character-level-container {
-  flex: 2;
-  text-align: right;
-}
-
 /* XP et bouton Add XP */
 .character-xp {
-  position: absolute;
-  top: 100px;
-  right: 20px;
+  text-align: right;
   font-size: 1.5em;
 }
 

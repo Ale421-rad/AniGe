@@ -197,9 +197,8 @@ function updateCharacterBP() {
 
 // Fonction pour mettre à jour l'image et le niveau du personnage
 function updateCharacterDetails() {
-    // Exemple d'images de niveaux pour chaque personnage
     const characterImages = {
-        "Character 1": [
+        "Monkey D. Luffy": [
             "Ch1/Ch1-L1.png",
             "Ch1/Ch1-L2.png",
             "Ch1/Ch1-L3.png",
@@ -207,7 +206,7 @@ function updateCharacterDetails() {
             "Ch1/Ch1-L5.png",
             "Ch1/Ch1-L6.png"
         ],
-        "Character 2": [
+        "Uzumaki Naruto": [
             "Ch2/Ch2-L1.png",
             "Ch2/Ch2-L2.png",
             "Ch2/Ch2-L3.png",
@@ -215,7 +214,7 @@ function updateCharacterDetails() {
             "Ch2/Ch2-L5.png",
             "Ch2/Ch2-L6.png"
         ],
-        "Character 3": [
+        "Kurosaki Ichigo": [
             "Ch3/Ch3-L1.png",
             "Ch3/Ch3-L2.png",
             "Ch3/Ch3-L3.png",
@@ -223,7 +222,7 @@ function updateCharacterDetails() {
             "Ch3/Ch3-L5.png",
             "Ch3/Ch3-L6.png"
         ],
-        "Character 4": [
+        "Goku": [
             "Ch4/Ch4-L1.png",
             "Ch4/Ch4-L2.png",
             "Ch4/Ch4-L3.png",
@@ -231,7 +230,7 @@ function updateCharacterDetails() {
             "Ch4/Ch4-L5.png",
             "Ch4/Ch4-L6.png"
         ],
-        "Character 5": [
+        "Natsu Dragneel": [
             "Ch5/Ch5-L1.png",
             "Ch5/Ch5-L2.png",
             "Ch5/Ch5-L3.png",
@@ -239,7 +238,7 @@ function updateCharacterDetails() {
             "Ch5/Ch5-L5.png",
             "Ch5/Ch5-L6.png"
         ],
-        "Character 6": [
+        "Pegasus Seiya": [
             "Ch6/Ch6-L1.png",
             "Ch6/Ch6-L2.png",
             "Ch6/Ch6-L3.png",
@@ -247,7 +246,7 @@ function updateCharacterDetails() {
             "Ch6/Ch6-L5.png",
             "Ch6/Ch6-L6.png"
         ],
-        "Character 7": [
+        "Saeba Ryo": [
             "Ch7/Ch7-L1.png",
             "Ch7/Ch7-L2.png",
             "Ch7/Ch7-L3.png",
@@ -255,7 +254,7 @@ function updateCharacterDetails() {
             "Ch7/Ch7-L5.png",
             "Ch7/Ch7-L6.png"
         ],
-        "Character 8": [
+        "Kirigaya Kazuto": [
             "Ch8/Ch8-L1.png",
             "Ch8/Ch8-L2.png",
             "Ch8/Ch8-L3.png",
@@ -263,7 +262,7 @@ function updateCharacterDetails() {
             "Ch8/Ch8-L5.png",
             "Ch8/Ch8-L6.png"
         ],
-        "Character 9": [
+        "Eren Yeager": [
             "Ch9/Ch9-L1.png",
             "Ch9/Ch9-L2.png",
             "Ch9/Ch9-L3.png",
@@ -271,7 +270,7 @@ function updateCharacterDetails() {
             "Ch9/Ch9-L5.png",
             "Ch9/Ch9-L6.png"
         ],
-        "Character 10": [
+        "Izuku Midoriya": [
             "Ch10/Ch10-L1.png",
             "Ch10/Ch10-L2.png",
             "Ch10/Ch10-L3.png",
@@ -279,7 +278,7 @@ function updateCharacterDetails() {
             "Ch10/Ch10-L5.png",
             "Ch10/Ch10-L6.png"
         ],
-        "Character 11": [
+        "Kamado Tanjiro": [
             "Ch11/Ch11-L1.png",
             "Ch11/Ch11-L2.png",
             "Ch11/Ch11-L3.png",
@@ -287,7 +286,7 @@ function updateCharacterDetails() {
             "Ch11/Ch11-L5.png",
             "Ch11/Ch11-L6.png"
         ],
-        "Character 12": [
+        "Itadori Yuji": [
             "Ch12/Ch12-L1.png",
             "Ch12/Ch12-L2.png",
             "Ch12/Ch12-L3.png",
@@ -295,7 +294,7 @@ function updateCharacterDetails() {
             "Ch12/Ch12-L5.png",
             "Ch12/Ch12-L6.png"
         ],
-        "Character 13": [
+        "Asta": [
             "Ch13/Ch13-L1.png",
             "Ch13/Ch13-L2.png",
             "Ch13/Ch13-L3.png",
@@ -303,7 +302,7 @@ function updateCharacterDetails() {
             "Ch13/Ch13-L5.png",
             "Ch13/Ch13-L6.png"
         ],
-        "Character 14": [
+        "Akame": [
             "Ch14/Ch14-L1.png",
             "Ch14/Ch14-L2.png",
             "Ch14/Ch14-L3.png",
@@ -311,7 +310,7 @@ function updateCharacterDetails() {
             "Ch14/Ch14-L5.png",
             "Ch14/Ch14-L6.png"
         ],
-        "Character 15": [
+        "Makunouchi ippo": [
             "Ch15/Ch15-L1.png",
             "Ch15/Ch15-L2.png",
             "Ch15/Ch15-L3.png",
@@ -319,7 +318,7 @@ function updateCharacterDetails() {
             "Ch15/Ch15-L5.png",
             "Ch15/Ch15-L6.png"
         ],
-        "Character 16": [
+        "Hinata Shoyo": [
             "Ch16/Ch16-L1.png",
             "Ch16/Ch16-L2.png",
             "Ch16/Ch16-L3.png",
@@ -327,7 +326,7 @@ function updateCharacterDetails() {
             "Ch16/Ch16-L5.png",
             "Ch16/Ch16-L6.png"
         ],
-        "Character 17": [
+        "Death Note Owner": [
             "Ch17/Ch17-L1.png",
             "Ch17/Ch17-L2.png",
             "Ch17/Ch17-L3.png",
@@ -335,7 +334,7 @@ function updateCharacterDetails() {
             "Ch17/Ch17-L5.png",
             "Ch17/Ch17-L6.png"
         ],
-        "Character 18": [
+        "Guts": [
             "Ch18/Ch18-L1.png",
             "Ch18/Ch18-L2.png",
             "Ch18/Ch18-L3.png",
@@ -343,7 +342,7 @@ function updateCharacterDetails() {
             "Ch18/Ch18-L5.png",
             "Ch18/Ch18-L6.png"
         ],
-        "Character 19": [
+        "Shinichi Kudo": [
             "Ch19/Ch19-L1.png",
             "Ch19/Ch19-L2.png",
             "Ch19/Ch19-L3.png",
@@ -351,7 +350,7 @@ function updateCharacterDetails() {
             "Ch19/Ch19-L5.png",
             "Ch19/Ch19-L6.png"
         ],
-        "Character 20": [
+        "Elric Brothers": [
             "Ch20/Ch20-L1.png",
             "Ch20/Ch20-L2.png",
             "Ch20/Ch20-L3.png",
@@ -359,7 +358,7 @@ function updateCharacterDetails() {
             "Ch20/Ch20-L5.png",
             "Ch20/Ch20-L6.png"
         ],
-        "Character 21": [
+        "Sakata Gintoki": [
             "Ch21/Ch21-L1.png",
             "Ch21/Ch21-L2.png",
             "Ch21/Ch21-L3.png",
@@ -367,7 +366,7 @@ function updateCharacterDetails() {
             "Ch21/Ch21-L5.png",
             "Ch21/Ch21-L6.png"
         ],
-        "Character 22": [
+        "JoJo": [
             "Ch22/Ch22-L1.png",
             "Ch22/Ch22-L2.png",
             "Ch22/Ch22-L3.png",
@@ -375,7 +374,7 @@ function updateCharacterDetails() {
             "Ch22/Ch22-L5.png",
             "Ch22/Ch22-L6.png"
         ],
-        "Character 23": [
+        "Gon Freecss": [
             "Ch23/Ch23-L1.png",
             "Ch23/Ch23-L2.png",
             "Ch23/Ch23-L3.png",
@@ -383,7 +382,7 @@ function updateCharacterDetails() {
             "Ch23/Ch23-L5.png",
             "Ch23/Ch23-L6.png"
         ],
-        "Character 24": [
+        "Anya Forger": [
             "Ch24/Ch24-L1.png",
             "Ch24/Ch24-L2.png",
             "Ch24/Ch24-L3.png",
@@ -391,7 +390,7 @@ function updateCharacterDetails() {
             "Ch24/Ch24-L5.png",
             "Ch24/Ch24-L6.png"
         ],
-        "Character 25": [
+        "Gundam Pilot": [
             "Ch25/Ch25-L1.png",
             "Ch25/Ch25-L2.png",
             "Ch25/Ch25-L3.png",
