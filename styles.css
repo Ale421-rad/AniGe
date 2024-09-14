@@ -128,6 +128,19 @@ body {
   padding: 20px;
 }
 
+#confirmation-page h1 {
+  font-size: 36px; 
+  font-family: 'Arial', sans-serif; 
+  text-align: center; 
+  margin-bottom: 20px; 
+  color: #007BFF; 
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+  background: linear-gradient(to right, #00BFFF, #1E90FF); 
+  background-clip: text; 
+  -webkit-background-clip: text; 
+  color: transparent; 
+}
+
 .confirmation-image, .character-image {
   max-width: 300px; 
   max-height: 300px; 
