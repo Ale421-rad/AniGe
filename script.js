@@ -1,7 +1,7 @@
 // JavaScript pour gérer la sélection de personnage, confirmation et fiche personnage
 
 // Référence des éléments DOM
-const characterSelection = document.getElementById('character-selection');
+const characterSelection = document.getElementById('selection header');
 const confirmationPage = document.getElementById('confirmation-page');
 const characterPage = document.getElementById('character-page');
 
