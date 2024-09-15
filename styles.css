@@ -170,13 +170,13 @@ body {
 }
 
 .confirmation-text {
-  font-size: 32px;
-  margin-bottom: 20px;
+  font-size: 2rem;
+  margin-bottom: 50px;
   color: #005b96;
 }
 
 .confirmation-special {
-  font-size: 20px;
+  font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 50px;
   margin: 0 auto;
@@ -189,10 +189,11 @@ body {
 }
 
 .confirmation-quote {
-  font-size: 32px;
+  font-size: 2rem;
   font-style: italic;
   color: #000000;
-  margin-bottom: 100px;
+  margin-bottom: 80px;
+  margin-top: 80px;
 }
 
 .confirmation-buttons {
@@ -202,14 +203,14 @@ body {
 
 .confirmation-buttons button {
   padding: 15px 35px;
-  font-size: 32px;
+  font-size: 2rem;
   border: 5px solid #007bff;
   cursor: pointer;
 }
 
 button#confirm-button {
   padding: 15px 35px;
-  font-size: 32px;
+  font-size: 2rem;
   background-color: #3abcc5a4;; 
   color: #007bff;
   border-radius: 25px;  
@@ -220,12 +221,12 @@ button#confirm-button:hover {
   background-color: #3abcc53f; 
   color: #007bff;
   padding: 16px 38px;
-  font-size: 35px;
+  font-size: 2.2rem;
 }
 
 button#back-button {
   padding: 15px 35px;
-  font-size: 32px;
+  font-size: 2rem;
   background-color: #3abcc5a4;
   color: #007bff; 
   border-radius: 25px;
@@ -236,7 +237,55 @@ button#back-button:hover {
   background-color: #3abcc53f; 
   color: #007bff;
   padding: 16px 38px;
-  font-size: 35px;
+  font-size: 2.2rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .confirmation-text {
+      font-size: 1.5rem;
+  }
+
+  .confirmation-special {
+      font-size: 0.8rem;
+  }
+  .confirmation-buttons button {
+    padding: 15px 35px;
+    font-size: 1rem;
+    border: 5px solid #007bff;
+    cursor: pointer;
+  }
+  
+  button#confirm-button {
+    padding: 15px 35px;
+    font-size: 1rem;
+    background-color: #3abcc5a4;; 
+    color: #007bff;
+    border-radius: 25px;  
+    transition: background-color 0.3s, color 0.3s, padding 0.3s, font-size 0.3s; 
+  }
+  
+  button#confirm-button:hover {
+    background-color: #3abcc53f; 
+    color: #007bff;
+    padding: 16px 38px;
+    font-size: 1.1rem;
+  }
+  
+  button#back-button {
+    padding: 15px 35px;
+    font-size: 1rem;
+    background-color: #3abcc5a4;
+    color: #007bff; 
+    border-radius: 25px;
+    transition: background-color 0.3s, color 0.3s, padding 0.3s, font-size 0.3s; 
+  }
+  
+  button#back-button:hover {
+    background-color: #3abcc53f; 
+    color: #007bff;
+    padding: 16px 38px;
+    font-size: 1.1rem;
+  }
 }
 
 
