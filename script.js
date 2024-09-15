@@ -269,6 +269,7 @@ function checkLevelUp() {
         updateCharacterStats();
         updateCharacterBP();
         updateCharacterDetails();
+        saveCharacterToLocalStorage();
     }
 }
 
