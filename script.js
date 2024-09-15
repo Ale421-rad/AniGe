@@ -35,12 +35,39 @@ function hideElement(element) {
     }, 500); // Correspond à la durée de l'animation CSS (0.5s)
 }
 
+function resetCharacterStats() {
+    characterStats.level = 1;
+    characterStats.xp = 0;
+    characterStats.pa = 1;
+    characterStats.ca = 3;
+    characterStats.sc = 0;
+
+    document.getElementById('level').textContent = characterStats.level;
+    document.getElementById('xp').textContent = characterStats.xp;
+    document.getElementById('pa').textContent = characterStats.pa;
+    document.getElementById('ca').textContent = characterStats.ca;
+    document.getElementById('sc').textContent = characterStats.sc;
+    xpInput.value = '';
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    const lastPage = localStorage.getItem("lastPage");
+    if (lastPage === "confirmation") {
+        showElement(confirmationPage);
+        hideElement(SelectionPage);
+    } else if (lastPage === "character") {
+        showElement(characterPage);
+        hideElement(SelectionPage);
+    }
+});
+
 // Gestion de la sélection de personnage
 document.addEventListener("DOMContentLoaded", function () {
     const characters = document.querySelectorAll(".character");
 
     characters.forEach(character => {
         character.addEventListener("click", function () {
+            resetCharacterStats();
             // Extraire le nom du personnage à partir de l'élément span
             const characterName = character.querySelector(".character-name").textContent;
             const characterSpecial1 = character.getAttribute("data-special1");
@@ -74,6 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("bp-container").style.display = "none";
             }
 
+        localStorage.setItem("lastPage", "confirmation");
         hideElement(SelectionPage);
         showElement(confirmationPage);
     });
@@ -89,6 +117,7 @@ confirmButton.addEventListener('click', function() {
 
     resetCharacterStats(); // Reset stats when confirming
 
+    localStorage.setItem("lastPage", "character");
     hideElement(confirmationPage);
     showElement(characterPage);
 });
@@ -96,6 +125,7 @@ confirmButton.addEventListener('click', function() {
 // Bouton retour
 backButton.addEventListener('click', function() {
 
+    localStorage.setItem("lastPage", "selection");
     hideElement(confirmationPage);
     showElement(SelectionPage);
 });
@@ -105,6 +135,7 @@ resetButton.addEventListener('click', function() {
 
     resetCharacterStats();
 
+    localStorage.setItem("lastPage", "selection");
     hideElement(characterPage);
     showElement(SelectionPage);
 });
@@ -175,11 +206,28 @@ function updateCharacterStats() {
             pa = 10; ca = 7; sc = 3; break;
     }
 
+    // Mettre à jour le localStorage
+    localStorage.setItem("currentLevel", currentLevel);
+    localStorage.setItem("currentXP", currentXP);
+
+    // Mettre à jour le DOM
     document.getElementById("level").textContent = currentLevel;
     document.getElementById("pa").textContent = pa;
     document.getElementById("ca").textContent = ca;
     document.getElementById("sc").textContent = sc;
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Restaurer les niveaux et XP à partir du localStorage
+    const savedLevel = localStorage.getItem("currentLevel");
+    const savedXP = localStorage.getItem("currentXP");
+
+    if (savedLevel) {
+        currentLevel = parseInt(savedLevel);
+        currentXP = parseInt(savedXP);
+        updateCharacterStats();
+    }
+});
 
 function updateCharacterBP() {
     if (selectedCharacter && selectedCharacter.bpName && selectedCharacter.bpValue) {
@@ -415,19 +463,3 @@ function updateCharacterDetails() {
     }, 500); 
 }
 
-
-// Fonction pour réinitialiser les statistiques du personnage
-function resetCharacterStats() {
-    characterStats.level = 1;
-    characterStats.xp = 0;
-    characterStats.pa = 1;
-    characterStats.ca = 3;
-    characterStats.sc = 0;
-
-    document.getElementById('level').textContent = characterStats.level;
-    document.getElementById('xp').textContent = characterStats.xp;
-    document.getElementById('pa').textContent = characterStats.pa;
-    document.getElementById('ca').textContent = characterStats.ca;
-    document.getElementById('sc').textContent = characterStats.sc;
-    xpInput.value = '';
-}
