@@ -81,8 +81,9 @@ function loadCharacterFromLocalStorage() {
         document.getElementById("character-image").src = character.image;
 
         // Mettre à jour les stats de niveau et XP
-        currentXP = character.xp;
-        currentLevel = character.level;
+        currentXP = character.xp || 0;
+        currentLevel = character.level || 1;
+        selectedCharacter = character;
         updateCharacterStats();
         document.getElementById("xp").textContent = currentXP;
         document.getElementById("level").textContent = currentLevel;
@@ -177,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
                 document.getElementById("bp-container").style.display = "none";
             }
-
+        
         localStorage.setItem("lastPage", "confirmation");
         saveCharacterToLocalStorage();
         hideElement(SelectionPage);
@@ -188,7 +189,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Bouton de confirmation
 confirmButton.addEventListener('click', function() {
-    checkLastPage();
     
  // Transférer les données vers la page fiche personnage
  document.getElementById("character-name").textContent = document.getElementById("confirm-name").textContent;
@@ -204,7 +204,6 @@ confirmButton.addEventListener('click', function() {
 
 // Bouton retour
 backButton.addEventListener('click', function() {
-    checkLastPage();
 
     localStorage.setItem("lastPage", "selection");
     saveCharacterToLocalStorage();
@@ -214,7 +213,6 @@ backButton.addEventListener('click', function() {
 
 // Bouton reset
 resetButton.addEventListener('click', function() {
-    checkLastPage();
 
     resetCharacterStats();
     resetCharacter();
