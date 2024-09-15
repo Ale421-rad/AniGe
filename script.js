@@ -50,19 +50,66 @@ function resetCharacterStats() {
     xpInput.value = '';
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    const lastPage = localStorage.getItem("lastPage");
-    if (lastPage === "confirmation") {
-        showElement(confirmationPage);
-        hideElement(SelectionPage);
-    } else if (lastPage === "character") {
-        showElement(characterPage);
-        hideElement(SelectionPage);
+// Sauvegarder les informations du personnage dans le localStorage
+function saveCharacterToLocalStorage() {
+    const characterData = {
+        name: document.getElementById("confirm-name").textContent,
+        special1: document.getElementById("confirm-special").textContent,
+        image: document.getElementById("confirm-image").src,
+        quote: document.getElementById("confirm-quote").textContent,
+        xp: currentXP,
+        level: currentLevel
+    };
+
+    localStorage.setItem("selectedCharacter", JSON.stringify(characterData));
+}
+
+// Récupérer les données sauvegardées au chargement de la page
+function loadCharacterFromLocalStorage() {
+    const characterData = localStorage.getItem("selectedCharacter");
+    if (characterData) {
+        const character = JSON.parse(characterData);
+
+        // Recharger les informations sur la page de confirmation
+        document.getElementById("confirm-name").textContent = character.name;
+        document.getElementById("confirm-special").textContent = character.special1;
+        document.getElementById("confirm-image").src = character.image;
+        document.getElementById("confirm-quote").textContent = character.quote;
+
+        // Recharger les informations sur la fiche personnage
+        document.getElementById("character-name").textContent = character.name;
+        document.getElementById("character-image").src = character.image;
+
+        // Mettre à jour les stats de niveau et XP
+        currentXP = character.xp;
+        currentLevel = character.level;
+        updateCharacterStats();
+        document.getElementById("xp").textContent = currentXP;
+        document.getElementById("level").textContent = currentLevel;
     }
-});
+}
+
+// Vérifier la dernière page consultée
+function checkLastPage() {
+    const lastPage = localStorage.getItem("lastPage");
+    
+    if (lastPage === "confirmation") {
+        loadCharacterFromLocalStorage();
+        hideElement(SelectionPage);
+        showElement(confirmationPage);
+    } else if (lastPage === "character") {
+        loadCharacterFromLocalStorage();
+        hideElement(SelectionPage);
+        showElement(characterPage);
+    } else {
+        showElement(SelectionPage); // Revenir à la page de sélection par défaut
+    }
+}
+
 
 // Gestion de la sélection de personnage
 document.addEventListener("DOMContentLoaded", function () {
+    checkLastPage();
     const characters = document.querySelectorAll(".character");
 
     characters.forEach(character => {
@@ -102,6 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
         localStorage.setItem("lastPage", "confirmation");
+        saveCharacterToLocalStorage();
         hideElement(SelectionPage);
         showElement(confirmationPage);
     });
@@ -110,6 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Bouton de confirmation
 confirmButton.addEventListener('click', function() {
+    checkLastPage();
     
  // Transférer les données vers la page fiche personnage
  document.getElementById("character-name").textContent = document.getElementById("confirm-name").textContent;
@@ -118,24 +167,29 @@ confirmButton.addEventListener('click', function() {
     resetCharacterStats(); // Reset stats when confirming
 
     localStorage.setItem("lastPage", "character");
+    saveCharacterToLocalStorage();
     hideElement(confirmationPage);
     showElement(characterPage);
 });
 
 // Bouton retour
 backButton.addEventListener('click', function() {
+    checkLastPage();
 
     localStorage.setItem("lastPage", "selection");
+    saveCharacterToLocalStorage();
     hideElement(confirmationPage);
     showElement(SelectionPage);
 });
 
 // Bouton reset
 resetButton.addEventListener('click', function() {
+    checkLastPage();
 
     resetCharacterStats();
 
     localStorage.setItem("lastPage", "selection");
+    saveCharacterToLocalStorage();
     hideElement(characterPage);
     showElement(SelectionPage);
 });
