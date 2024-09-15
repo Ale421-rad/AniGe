@@ -178,7 +178,6 @@ body {
 .confirmation-special {
   font-size: 1.2rem;
   font-weight: bold;
-  margin-bottom: 50px;
   margin: 0 auto;
   max-width: 40%;
   color: #000547; 
@@ -246,7 +245,8 @@ button#back-button:hover {
   }
 
   .confirmation-special {
-      font-size: 0.8rem;
+      font-size: 1rem;
+      max-width: 80%;
   }
   .confirmation-buttons button {
     padding: 15px 35px;
