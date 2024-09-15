@@ -185,7 +185,6 @@ body {
   border: 2px solid #0011ff;
   border-radius: 5px;
   background-color: #18c2ce9d;
-  text-align:justify;
 }
 
 .confirmation-quote {
@@ -248,43 +247,25 @@ button#back-button:hover {
   .confirmation-special {
       font-size: 0.8rem;
       max-width: 90%;
+      text-align:justify;
   }
   .confirmation-buttons button {
-    padding: 15px 35px;
     font-size: 1rem;
-    border: 5px solid #007bff;
-    cursor: pointer;
   }
   
   button#confirm-button {
-    padding: 15px 35px;
     font-size: 1rem;
-    background-color: #3abcc5a4;; 
-    color: #007bff;
-    border-radius: 25px;  
-    transition: background-color 0.3s, color 0.3s, padding 0.3s, font-size 0.3s; 
   }
   
   button#confirm-button:hover {
-    background-color: #3abcc53f; 
-    color: #007bff;
-    padding: 16px 38px;
     font-size: 1.1rem;
   }
   
   button#back-button {
-    padding: 15px 35px;
     font-size: 1rem;
-    background-color: #3abcc5a4;
-    color: #007bff; 
-    border-radius: 25px;
-    transition: background-color 0.3s, color 0.3s, padding 0.3s, font-size 0.3s; 
   }
   
   button#back-button:hover {
-    background-color: #3abcc53f; 
-    color: #007bff;
-    padding: 16px 38px;
     font-size: 1.1rem;
   }
 }
@@ -312,7 +293,7 @@ button#back-button:hover {
 
 #character-header h1 {
   padding: 20px;
-  font-size: 32px;
+  font-size: 2rem;
   font-family: 'Arial', sans-serif;
   margin-bottom: 20px;
   color: #007BFF;
@@ -347,27 +328,25 @@ button#back-button:hover {
   padding: 20px;
   margin-bottom: 40px;
   text-align: right;
-  font-size: 3em;
+  font-size: 3rem;
   font-weight: bold;
   color: #333;
 }
 
 /* XP et bouton Add XP */
 #character-sheet h2 {
-  font-size: 0.5em;
+  font-size: 1.5rem;
   font-weight: normal;
   margin-bottom: 20px;
 }
 
 #xp-add-button {
-  display: flex;
-  justify-content: center;
   background-color: #c5a03aa4;
   border: 2px solid #000000;
   color: #002042;
   border-radius: 12px;
   padding: 8px 16px;
-  font-size: 12px;
+  font-size: 0.8rem;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -376,7 +355,7 @@ button#back-button:hover {
   background-color: #c5a03a25; 
   color: #002042;
   padding: 9px 17px;
-  font-size: 13px;
+  font-size: 0.9rem;
 }
 
 /* Style pour la liste des caractéristiques */
@@ -384,7 +363,7 @@ button#back-button:hover {
   margin-bottom: 20px; 
   list-style-type: none;
   padding: 10px;
-  font-size: 25px;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
@@ -405,7 +384,7 @@ button#back-button:hover {
   color: #000000;
   border-radius: 25px;
   padding: 10px 20px;
-  font-size: 14px;
+  font-size: 1rem;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -415,6 +394,38 @@ button#back-button:hover {
   border: 2px solid #ff0000;
   color: #000000;
   padding: 11px 22px;
-  font-size: 16px;
+  font-size: 1.1rem;
 }
 
+@media only screen and (max-width: 600px) {
+  #character-frame {
+    width: 90%;
+  }
+  .character-image {
+    max-width: 200px; 
+    max-height: 200px; 
+  }
+ .character-level {
+   font-size: 1.5rem;
+ }
+ #character-sheet h2 {
+   font-size: 0.75rem;
+ }
+ #xp-add-button {
+   font-size: 0.5rem;
+ }
+ #xp-add-button:hover {
+   font-size: 0.6rem;
+ }
+ .character-stats {
+   font-size: 0.75rem;
+ }
+
+ #reset-button {
+   font-size: 0.5rem;
+ }
+
+ #reset-button:hover {
+   font-size: 0.6rem;
+ }
+}
