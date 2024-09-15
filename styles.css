@@ -83,6 +83,24 @@ body {
   transition: opacity 0.3s ease; 
 }
 
+/* Media Queries pour écran de taille moyenne (tablettes) */
+@media only screen and (max-width: 900px) {
+  #character-selection {
+      grid-template-columns: repeat(3, 1fr); /* 3 colonnes sur écran moyen */
+  }
+}
+
+/* Media Queries pour mobile (une seule colonne) */
+@media only screen and (max-width: 600px) {
+  #character-selection {
+      grid-template-columns: 1fr; /* 1 seule colonne sur petit écran */
+  }
+
+  .character {
+      margin-bottom: 10px; /* Espace supplémentaire entre les éléments */
+  }
+}
+
 /* Hover effect for the character images */
 .character:hover .character-name {
   opacity: 1; /* Affiche le texte lors du survol */
