@@ -106,6 +106,36 @@ function checkLastPage() {
     }
 }
 
+// Fonction de reset des données du personnage et du localStorage
+function resetCharacter() {
+    // Effacer les données du personnage dans le localStorage
+    localStorage.removeItem("selectedCharacter");
+    
+    // Réinitialiser les valeurs de niveau, XP et autres stats
+    currentXP = 0;
+    currentLevel = 1;
+    document.getElementById("xp").textContent = currentXP;
+    document.getElementById("level").textContent = currentLevel;
+
+    // Réinitialiser les autres informations du personnage (nom, image, etc.)
+    document.getElementById("confirm-name").textContent = "";
+    document.getElementById("confirm-special").textContent = "";
+    document.getElementById("confirm-image").src = "";
+    document.getElementById("confirm-quote").textContent = "";
+
+    // Vider également les informations de la fiche personnage
+    document.getElementById("character-name").textContent = "";
+    document.getElementById("character-image").src = "";
+
+    // Retourner à la page de sélection de personnage
+    hideElement(confirmationPage);
+    hideElement(characterPage);
+    showElement(SelectionPage);
+
+    // Sauvegarder l'information que l'utilisateur revient à la page de sélection
+    localStorage.setItem("lastPage", "selection");
+}
+
 
 // Gestion de la sélection de personnage
 document.addEventListener("DOMContentLoaded", function () {
@@ -187,9 +217,9 @@ resetButton.addEventListener('click', function() {
     checkLastPage();
 
     resetCharacterStats();
+    resetCharacter();
 
     localStorage.setItem("lastPage", "selection");
-    saveCharacterToLocalStorage();
     hideElement(characterPage);
     showElement(SelectionPage);
 });
