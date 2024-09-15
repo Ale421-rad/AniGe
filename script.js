@@ -58,8 +58,7 @@ function saveCharacterToLocalStorage() {
         image: document.getElementById("confirm-image").src,
         quote: document.getElementById("confirm-quote").textContent,
         xp: currentXP,
-        level: currentLevel,
-        levelImage: document.getElementById("characterImage").src
+        level: currentLevel
     };
 
     localStorage.setItem("selectedCharacter", JSON.stringify(characterData));
@@ -85,8 +84,6 @@ function loadCharacterFromLocalStorage() {
         currentXP = character.xp || 0;
         currentLevel = character.level || 1;
         selectedCharacter = character;
-        document.getElementById("characterImage").src = character.levelImage;
-
         updateCharacterStats();
         document.getElementById("xp").textContent = currentXP;
         document.getElementById("level").textContent = currentLevel;
@@ -231,6 +228,8 @@ xpAddButton.addEventListener('click', function() {
     if (!isNaN(newXP) && newXP >= 0) {
         addXP(newXP);
     }
+
+    saveCharacterToLocalStorage();
 });
 
 // Fonction pour mettre à jour les statistiques du personnage
@@ -243,7 +242,6 @@ function addXP(amount) {
         currentXP += amount;
         document.getElementById("xp").textContent = currentXP;
         checkLevelUp();
-        saveCharacterToLocalStorage();
     }
 }
 
