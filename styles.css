@@ -406,8 +406,8 @@ button#back-button:hover {
     width: 90%;
   }
   .character-image {
-    max-width: 180px; 
-    max-height: 180px; 
+    max-width: 200px; 
+    max-height: 200px; 
   }
  .character-level {
    font-size: 1.5rem;
@@ -423,13 +423,5 @@ button#back-button:hover {
  }
  .character-stats {
    font-size: 1rem;
- }
-
- #reset-button {
-   font-size: 0.5rem;
- }
-
- #reset-button:hover {
-   font-size: 0.6rem;
  }
 }
