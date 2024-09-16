@@ -9,13 +9,14 @@ body {
 
 /* Ajout d'un conteneur pour le logo */
 .logo-container {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   max-width: 400px; 
   max-height: 400px; 
-  opacity: 0.6; 
+  opacity: 0.5;
+  pointer-events: none; 
 }
 
 /* L'image elle-même */
@@ -119,11 +120,8 @@ body {
   }
 
   .logo-container {
-     top: 10px;
-     left: 10px;
-     transform: none; /* Annule le centrage pour mobile */
-     max-width: 100px; /* Réduit la taille du logo */
-     max-height: 100px;
+     max-width: 300px; 
+     max-height: 300px;
  }
 }
 
