@@ -62,7 +62,7 @@ body {
   margin: 0 auto; 
   padding: 20px; 
   max-width: 60%; 
-  background-color: #aff3fc;
+  background-color: #a2f4ffa2;
   border-radius: 15px; 
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
 }
@@ -301,7 +301,7 @@ button#back-button:hover {
   padding: 20px;
   width: 40%;
   margin: 0 auto;
-  background-color: #dafff9;
+  background-color: #b7fff3a6;
 }
 
 /* Image du personnage avec transition */
