@@ -8,8 +8,10 @@ body {
   background-image: url('Logo.png');
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: auto;
-  background-attachment: fixed;
+  background-size: contain; 
+  background-attachment: fixed; 
+  max-width: 800px;  
+  max-height: 400px;
 }
 
 /* Style du titre "Select Your Character" */
