@@ -117,6 +117,14 @@ body {
   .character {
       margin-bottom: 10px; /* Espace supplémentaire entre les éléments */
   }
+
+  .logo-container {
+     top: 10px;
+     left: 10px;
+     transform: none; /* Annule le centrage pour mobile */
+     max-width: 100px; /* Réduit la taille du logo */
+     max-height: 100px;
+ }
 }
 
 /* Hover effect for the character images */
