@@ -396,7 +396,7 @@ function updateCharacterDetails() {
             "Ch8/Ch8-L5.png",
             "Ch8/Ch8-L6.png"
         ],
-        "Eren Yeager": [
+        "Eren Jäger": [
             "Ch9/Ch9-L1.png",
             "Ch9/Ch9-L2.png",
             "Ch9/Ch9-L3.png",
