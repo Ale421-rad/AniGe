@@ -276,19 +276,19 @@ function checkLevelUp() {
 }
 
 function updateCharacterStats() {
-    let pa = 1, ca = 3, sc = 0;
+    let pa = 1, ca = 2, sc = 0;
 
     switch (currentLevel) {
         case 2:
-            pa = 2; ca = 5; sc = 0; break;
+            pa = 2; ca = 3; sc = 0; break;
         case 3:
-            pa = 3; ca = 5; sc = 1; break;
+            pa = 3; ca = 3; sc = 1; break;
         case 4:
-            pa = 4; ca = 7; sc = 1; break;
+            pa = 4; ca = 4; sc = 1; break;
         case 5:
-            pa = 5; ca = 7; sc = 3; break;
+            pa = 5; ca = 4; sc = 3; break;
         case 6:
-            pa = 10; ca = 7; sc = 3; break;
+            pa = 10; ca = 5; sc = 3; break;
     }
 
     // Mettre à jour le localStorage
