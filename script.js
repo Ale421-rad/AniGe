@@ -225,7 +225,7 @@ resetButton.addEventListener('click', function() {
 // Bouton changement XP
 xpAddButton.addEventListener('click', function() {
     const newXP = parseInt(xpInput.value);
-    if (!isNaN(newXP) && newXP >= 0) {
+    if (!isNaN(newXP)) {
         addXP(newXP);
     }
 
