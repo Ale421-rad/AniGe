@@ -161,43 +161,6 @@ body {
   }
 }
 
-#character-26-selection {
-  text-align: center;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(255, 255, 255, 0.9);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-}
-
-.character-26-options {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.character-26-options .option {
-  cursor: pointer;
-  text-align: center;
-}
-
-.character-26-options img {
-  width: 150px;
-  height: 150px;
-  object-fit: contain;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-}
-
-.character-26-options img:hover {
-  transform: scale(1.1);
-}
-
-
 /* Page de Confirmation */
 #confirmation-page {
   display: flex;
