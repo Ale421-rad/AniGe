@@ -78,7 +78,7 @@ function loadCharacterFromLocalStorage() {
 
         // Recharger les informations sur la fiche personnage
         document.getElementById("character-name").textContent = character.name;
-        document.getElementById("character-image").src = character.image;
+
 
         // Mettre à jour les stats de niveau et XP
         currentXP = character.xp || 0;
