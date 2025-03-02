@@ -635,18 +635,32 @@ document.addEventListener("DOMContentLoaded", function () {
         selectCharacter26("Hikari");
     });
 
-    // Fonction qui passe à la page de confirmation
+    // Fonction pour afficher la page de confirmation avec les bonnes données
     function goToConfirmation(character) {
-        document.getElementById("confirm-name").textContent = character.name;
-        document.getElementById("confirm-image").src = character.image;
-        document.getElementById("confirm-special").innerHTML = `${character.special1}<br>${character.special2}`;
-        document.getElementById("confirm-quote").textContent = `"${character.quote}"`;
+        let characterName = character.name || character.querySelector(".character-name").textContent;
+        let characterImage = character.image || character.querySelector("img").src;
+        let characterSpecial1 = character.special1 || character.getAttribute("data-special1");
+        let characterSpecial2 = character.special2 || character.getAttribute("data-special2");
+        let characterQuote = character.quote || character.getAttribute("data-quote");
 
-        // Sauvegarde dans le localStorage
-        localStorage.setItem("selectedCharacter", JSON.stringify(character));
+        // Mise à jour de la page de confirmation
+        document.getElementById("confirm-name").textContent = characterName;
+        document.getElementById("confirm-image").src = characterImage;
+        document.getElementById("confirm-special").innerHTML = `${characterSpecial1}<br>${characterSpecial2}`;
+        document.getElementById("confirm-quote").textContent = `"${characterQuote}"`;
 
-        // Afficher la page de confirmation
-        hideElement(SelectionPage);
-        showElement(confirmationPage);
+        // Sauvegarde les données dans le localStorage
+        let characterData = {
+            name: characterName,
+            image: characterImage,
+            special1: characterSpecial1,
+            special2: characterSpecial2,
+            quote: characterQuote
+        };
+        localStorage.setItem("selectedCharacter", JSON.stringify(characterData));
+
+        // Change l'affichage
+        hideElement(document.getElementById("selection-header"));
+        showElement(document.getElementById("confirmation-page"));
     }
 });
