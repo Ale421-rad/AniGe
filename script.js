@@ -588,3 +588,65 @@ function updateCharacterDetails() {
     }, 500); 
 }
 
+// Gestion du personnage 26
+document.addEventListener("DOMContentLoaded", function () {
+    const characters = document.querySelectorAll(".character");
+    const character26Selection = document.getElementById("character-26-selection");
+    const selectSatoshi = document.getElementById("select-satoshi");
+    const selectHikari = document.getElementById("select-hikari");
+
+    characters.forEach(character => {
+        character.addEventListener("click", function () {
+            const characterName = character.querySelector(".character-name").textContent;
+            
+            // Si le joueur sélectionne le Character 26, affiche la fenêtre intermédiaire
+            if (characterName === "Character 26") {
+                character26Selection.style.display = "block";
+            } else {
+                // Sélection normale pour les autres personnages
+                goToConfirmation(character);
+            }
+        });
+    });
+
+    // Fonction de gestion de la sélection entre Satoshi et Hikari
+    function selectCharacter26(version) {
+        let characterData = {
+            name: version === "Satoshi" ? "Satoshi" : "Hikari",
+            image: version === "Satoshi" ? "Ch26/Satoshi/Ch26-S-L1.png" : "Ch26/Hikari/Ch26-H-L1.png",
+            special1: version === "Satoshi" ? "50% extra XP for questions about Pokémon" : "50% extra XP for questions about Contests",
+            special2: version === "Satoshi" ? "+5XP for every Pokémon battle question" : "+5XP for every Contest-related question",
+            quote: version === "Satoshi" ? "Je vais devenir le meilleur dresseur Pokémon !" : "Je vais remporter tous les concours Pokémon !"
+        };
+
+        // Ferme la fenêtre intermédiaire
+        character26Selection.style.display = "none";
+
+        // Lance la confirmation avec les données du personnage choisi
+        goToConfirmation(characterData);
+    }
+
+    // Ajouter les écouteurs d'événements pour les boutons Satoshi et Hikari
+    selectSatoshi.addEventListener("click", function () {
+        selectCharacter26("Satoshi");
+    });
+
+    selectHikari.addEventListener("click", function () {
+        selectCharacter26("Hikari");
+    });
+
+    // Fonction qui passe à la page de confirmation
+    function goToConfirmation(character) {
+        document.getElementById("confirm-name").textContent = character.name;
+        document.getElementById("confirm-image").src = character.image;
+        document.getElementById("confirm-special").innerHTML = `${character.special1}<br>${character.special2}`;
+        document.getElementById("confirm-quote").textContent = `"${character.quote}"`;
+
+        // Sauvegarde dans le localStorage
+        localStorage.setItem("selectedCharacter", JSON.stringify(character));
+
+        // Afficher la page de confirmation
+        hideElement(SelectionPage);
+        showElement(confirmationPage);
+    }
+});
