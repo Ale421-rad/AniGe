@@ -211,7 +211,7 @@ body {
 
 /* Effet de zoom au survol */
 .character-26-hover img:hover {
-  transform: scale(2.2);
+  transform: scale(1.1);
 }
 
 /* Quand on passe la souris, les images apparaissent */
