@@ -364,7 +364,7 @@ function updateCharacterDetails() {
             "Ch4/Ch4-L5.png",
             "Ch4/Ch4-L6.png"
         ],
-        "Natsu Dragneel": [
+        "Dragneel Natsu": [
             "Ch5/Ch5-L1.png",
             "Ch5/Ch5-L2.png",
             "Ch5/Ch5-L3.png",
@@ -396,7 +396,7 @@ function updateCharacterDetails() {
             "Ch8/Ch8-L5.png",
             "Ch8/Ch8-L6.png"
         ],
-        "Eren Jäger": [
+        "Jäger Eren": [
             "Ch9/Ch9-L1.png",
             "Ch9/Ch9-L2.png",
             "Ch9/Ch9-L3.png",
@@ -404,7 +404,7 @@ function updateCharacterDetails() {
             "Ch9/Ch9-L5.png",
             "Ch9/Ch9-L6.png"
         ],
-        "Izuku Midoriya": [
+        "Midoriya Izuku": [
             "Ch10/Ch10-L1.png",
             "Ch10/Ch10-L2.png",
             "Ch10/Ch10-L3.png",
@@ -436,7 +436,7 @@ function updateCharacterDetails() {
             "Ch13/Ch13-L5.png",
             "Ch13/Ch13-L6.png"
         ],
-        "Akame": [
+        "Makino Tsukushi": [
             "Ch14/Ch14-L1.png",
             "Ch14/Ch14-L2.png",
             "Ch14/Ch14-L3.png",
@@ -508,7 +508,7 @@ function updateCharacterDetails() {
             "Ch22/Ch22-L5.png",
             "Ch22/Ch22-L6.png"
         ],
-        "Gon Freecss": [
+        "Freecss Gon": [
             "Ch23/Ch23-L1.png",
             "Ch23/Ch23-L2.png",
             "Ch23/Ch23-L3.png",
@@ -516,7 +516,7 @@ function updateCharacterDetails() {
             "Ch23/Ch23-L5.png",
             "Ch23/Ch23-L6.png"
         ],
-        "Anya Forger": [
+        "Forger Anya": [
             "Ch24/Ch24-L1.png",
             "Ch24/Ch24-L2.png",
             "Ch24/Ch24-L3.png",
@@ -531,6 +531,46 @@ function updateCharacterDetails() {
             "Ch25/Ch25-L4.png",
             "Ch25/Ch25-L5.png",
             "Ch25/Ch25-L6.png"
+        ],
+        "Pokémon Trainer": [
+            "Ch26/Satoshi/Ch26-S-L1.png",
+            "Ch26/Satoshi/Ch26-S-L2.png",
+            "Ch26/Satoshi/Ch26-S-L3.png",
+            "Ch26/Satoshi/Ch26-S-L4.png",
+            "Ch26/Satoshi/Ch26-S-L5.png",
+            "Ch26/Satoshi/Ch26-S-L6.png"
+        ],
+        "Inuyasha": [
+            "Ch27/Ch27-L1.png",
+            "Ch27/Ch27-L2.png",
+            "Ch27/Ch27-L3.png",
+            "Ch27/Ch27-L4.png",
+            "Ch27/Ch27-L5.png",
+            "Ch27/Ch27-L6.png"
+        ],
+        "Shin": [
+            "Ch28/Ch28-L1.png",
+            "Ch28/Ch28-L2.png",
+            "Ch28/Ch28-L3.png",
+            "Ch28/Ch28-L4.png",
+            "Ch28/Ch28-L5.png",
+            "Ch28/Ch28-L6.png"
+        ],
+        "Atom": [
+            "Ch29/Ch29-L1.png",
+            "Ch29/Ch29-L2.png",
+            "Ch29/Ch29-L3.png",
+            "Ch29/Ch29-L4.png",
+            "Ch29/Ch29-L5.png",
+            "Ch29/Ch29-L6.png"
+        ],
+        "Tsukino Usagi": [
+            "Ch30/Ch30-L1.png",
+            "Ch30/Ch30-L2.png",
+            "Ch30/Ch30-L3.png",
+            "Ch30/Ch30-L4.png",
+            "Ch30/Ch30-L5.png",
+            "Ch30/Ch30-L6.png"
         ],
     };
 
