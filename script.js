@@ -591,6 +591,10 @@ function updateCharacterDetails() {
 // Gestion du personnage 26
 document.addEventListener("DOMContentLoaded", function () {
     const characters = document.querySelectorAll(".character");
+    const confirmationPage = document.getElementById("confirmation-page");
+    const selectionPage = document.getElementById("selection-header");
+
+    // Fenêtre intermédiaire pour Character 26
     const character26Selection = document.getElementById("character-26-selection");
     const selectSatoshi = document.getElementById("select-satoshi");
     const selectHikari = document.getElementById("select-hikari");
@@ -598,9 +602,9 @@ document.addEventListener("DOMContentLoaded", function () {
     characters.forEach(character => {
         character.addEventListener("click", function () {
             const characterName = character.querySelector(".character-name").textContent;
-            
-            // Si le joueur sélectionne le Character 26, affiche la fenêtre intermédiaire
-            if (characterName === "Character 26") {
+
+            // Si c'est Character 26, afficher la fenêtre de choix
+            if (characterName === "Satoshi & Hikari") {
                 character26Selection.style.display = "block";
             } else {
                 // Sélection normale pour les autres personnages
@@ -609,24 +613,24 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Fonction de gestion de la sélection entre Satoshi et Hikari
+    // Gestion de la sélection entre Satoshi et Hikari
     function selectCharacter26(version) {
         let characterData = {
             name: version === "Satoshi" ? "Satoshi" : "Hikari",
-            image: version === "Satoshi" ? "Ch26/Satoshi/Ch26-S-L1.png" : "Ch26/Hikari/Ch26-H-L1.png",
-            special1: version === "Satoshi" ? "50% extra XP for questions about Pokémon" : "50% extra XP for questions about Contests",
-            special2: version === "Satoshi" ? "+5XP for every Pokémon battle question" : "+5XP for every Contest-related question",
+            image: version === "Satoshi" ? "Ch26-Satoshi.png" : "Ch26-Hikari.png",
+            special1: version === "Satoshi" ? "50% extra XP for Pokémon questions" : "50% extra XP for Contests",
+            special2: version === "Satoshi" ? "+5XP for Pokémon battles" : "+5XP for Contest-related questions",
             quote: version === "Satoshi" ? "Je vais devenir le meilleur dresseur Pokémon !" : "Je vais remporter tous les concours Pokémon !"
         };
 
         // Ferme la fenêtre intermédiaire
         character26Selection.style.display = "none";
 
-        // Lance la confirmation avec les données du personnage choisi
+        // Passe à la confirmation avec le personnage sélectionné
         goToConfirmation(characterData);
     }
 
-    // Ajouter les écouteurs d'événements pour les boutons Satoshi et Hikari
+    // Ajouter les événements de clic pour Satoshi et Hikari
     selectSatoshi.addEventListener("click", function () {
         selectCharacter26("Satoshi");
     });
@@ -635,7 +639,7 @@ document.addEventListener("DOMContentLoaded", function () {
         selectCharacter26("Hikari");
     });
 
-    // Fonction pour afficher la page de confirmation avec les bonnes données
+    // Fonction qui affiche la page de confirmation
     function goToConfirmation(character) {
         let characterName = character.name || character.querySelector(".character-name").textContent;
         let characterImage = character.image || character.querySelector("img").src;
@@ -649,7 +653,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("confirm-special").innerHTML = `${characterSpecial1}<br>${characterSpecial2}`;
         document.getElementById("confirm-quote").textContent = `"${characterQuote}"`;
 
-        // Sauvegarde les données dans le localStorage
+        // Sauvegarde dans le localStorage
         let characterData = {
             name: characterName,
             image: characterImage,
@@ -660,7 +664,7 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem("selectedCharacter", JSON.stringify(characterData));
 
         // Change l'affichage
-        hideElement(document.getElementById("selection-header"));
-        showElement(document.getElementById("confirmation-page"));
+        hideElement(selectionPage);
+        showElement(confirmationPage);
     }
 });
