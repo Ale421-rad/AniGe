@@ -78,7 +78,7 @@ function loadCharacterFromLocalStorage() {
 
         // Recharger les informations sur la fiche personnage
         document.getElementById("character-name").textContent = character.name;
-
+        document.getElementById("character-image").src = character.image;
 
         // Mettre à jour les stats de niveau et XP
         currentXP = character.xp || 0;
@@ -232,6 +232,16 @@ xpAddButton.addEventListener('click', function() {
     saveCharacterToLocalStorage();
 });
 
+// Liste des XP nécessaires pour passer chaque niveau
+const xpRequiredForLevelUp = {
+    1: 10,
+    2: 30,
+    3: 70,
+    4: 130,
+    5: 250,
+    6: null // Pas de niveau au-delà de 6
+};
+
 // Fonction pour mettre à jour les statistiques du personnage
 let currentXP = 0;
 let currentLevel = 1;
@@ -277,6 +287,7 @@ function checkLevelUp() {
 
 function updateCharacterStats() {
     let pa = 1, ca = 2, sc = 0;
+    let xpMax = xpRequiredForLevelUp[currentLevel] || "Max"; // Affiche "Max" au niveau 6
 
     switch (currentLevel) {
         case 2:
@@ -300,6 +311,10 @@ function updateCharacterStats() {
     document.getElementById("pa").textContent = pa;
     document.getElementById("ca").textContent = ca;
     document.getElementById("sc").textContent = sc;
+
+    // Mettre à jour l'affichage des XP
+    document.getElementById("xp").textContent = currentXP;
+    document.getElementById("xp-max").textContent = xpMax;
 }
 
 document.addEventListener("DOMContentLoaded", function() {
