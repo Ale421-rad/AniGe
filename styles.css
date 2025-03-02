@@ -170,10 +170,17 @@ body {
 
 /* Image de base */
 .character-26 img.character-26-base {
-  width: 100%;
-  max-width: 150px;
-  height: auto;
-  transition: opacity 0.3s ease-in-out;
+  width: 100%; 
+  height: 100%; 
+  max-width: 150px; 
+  max-height: 150px; 
+  object-fit: contain; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  transition: transform 0.3s; 
+  display: block; 
+  margin: 0 auto; 
+  will-change: transform; 
 }
 
 /* Conteneur des images alternatives (Satoshi & Hikari) */
@@ -183,7 +190,9 @@ body {
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
+  height: 100%;
   max-width: 150px;
+  max-height: 150px;
   display: flex;
   justify-content: space-between;
   gap: 5px;
@@ -202,7 +211,7 @@ body {
 
 /* Effet de zoom au survol */
 .character-26-hover img:hover {
-  transform: scale(1.1);
+  transform: scale(2.2);
 }
 
 /* Quand on passe la souris, les images apparaissent */
