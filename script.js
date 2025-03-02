@@ -547,13 +547,21 @@ function updateCharacterDetails() {
             "Ch25/Ch25-L5.png",
             "Ch25/Ch25-L6.png"
         ],
-        "Pokémon Trainer": [
+        "Satoshi": [
             "Ch26/Satoshi/Ch26-S-L1.png",
             "Ch26/Satoshi/Ch26-S-L2.png",
             "Ch26/Satoshi/Ch26-S-L3.png",
             "Ch26/Satoshi/Ch26-S-L4.png",
             "Ch26/Satoshi/Ch26-S-L5.png",
             "Ch26/Satoshi/Ch26-S-L6.png"
+        ],
+        "Hikari": [
+            "Ch26/Hikari/Ch26-H-L1.png",
+            "Ch26/Hikari/Ch26-H-L2.png",
+            "Ch26/Hikari/Ch26-H-L3.png",
+            "Ch26/Hikari/Ch26-H-L4.png",
+            "Ch26/Hikari/Ch26-H-L5.png",
+            "Ch26/Hikari/Ch26-H-L6.png"
         ],
         "Inuyasha": [
             "Ch27/Ch27-L1.png",
@@ -633,9 +641,9 @@ document.addEventListener("DOMContentLoaded", function () {
         let characterData = {
             name: version === "Satoshi" ? "Satoshi" : "Hikari",
             image: version === "Satoshi" ? "Ch26/Satoshi/Ch26-S-L1.png" : "Ch26/Hikari/Ch26-H-L1.png",
-            special1: version === "Satoshi" ? "50% extra XP for Pokémon questions" : "50% extra XP for Contests",
-            special2: version === "Satoshi" ? "+5XP for Pokémon battles" : "+5XP for Contest-related questions",
-            quote: version === "Satoshi" ? "Je vais devenir le meilleur dresseur Pokémon !" : "Je vais remporter tous les concours Pokémon !"
+            special1: version === "Satoshi" ? "50% extra XP for questions about Pokémon" : "50% extra XP for questions about Pokémon",
+            special2: version === "Satoshi" ? "Start the game with a Master Ball" : "Start the game with a Master Ball",
+            quote: version === "Satoshi" ? "ゲットだぜ！" : "ち・が・い・ま・す！"
         };
 
         goToConfirmation(characterData);
