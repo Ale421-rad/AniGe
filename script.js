@@ -603,3 +603,66 @@ function updateCharacterDetails() {
     }, 500); 
 }
 
+// Gestion Personnage 26
+document.addEventListener("DOMContentLoaded", function () {
+    const characters = document.querySelectorAll(".character");
+
+    characters.forEach(character => {
+        character.addEventListener("click", function () {
+            const characterName = character.querySelector(".character-name").textContent;
+
+            // Si c'est Character 26, ne pas agir sur le clic principal
+            if (character.classList.contains("character-26")) return;
+
+            goToConfirmation(character);
+        });
+    });
+
+    // Sélection spécifique pour Satoshi & Hikari
+    document.getElementById("select-satoshi").addEventListener("click", function (event) {
+        event.stopPropagation(); // Empêche la sélection du personnage de base
+        selectCharacter26("Satoshi");
+    });
+
+    document.getElementById("select-hikari").addEventListener("click", function (event) {
+        event.stopPropagation();
+        selectCharacter26("Hikari");
+    });
+
+    function selectCharacter26(version) {
+        let characterData = {
+            name: version === "Satoshi" ? "Satoshi" : "Hikari",
+            image: version === "Satoshi" ? "Ch26/Satoshi/Ch26-S-L1.png" : "Ch26/Hikari/Ch26-H-L1.png",
+            special1: version === "Satoshi" ? "50% extra XP for Pokémon questions" : "50% extra XP for Contests",
+            special2: version === "Satoshi" ? "+5XP for Pokémon battles" : "+5XP for Contest-related questions",
+            quote: version === "Satoshi" ? "Je vais devenir le meilleur dresseur Pokémon !" : "Je vais remporter tous les concours Pokémon !"
+        };
+
+        goToConfirmation(characterData);
+    }
+
+    function goToConfirmation(character) {
+        let characterName = character.name || character.querySelector(".character-name").textContent;
+        let characterImage = character.image || character.querySelector("img").src;
+        let characterSpecial1 = character.special1 || character.getAttribute("data-special1");
+        let characterSpecial2 = character.special2 || character.getAttribute("data-special2");
+        let characterQuote = character.quote || character.getAttribute("data-quote");
+
+        document.getElementById("confirm-name").textContent = characterName;
+        document.getElementById("confirm-image").src = characterImage;
+        document.getElementById("confirm-special").innerHTML = `${characterSpecial1}<br>${characterSpecial2}`;
+        document.getElementById("confirm-quote").textContent = `"${characterQuote}"`;
+
+        let characterData = {
+            name: characterName,
+            image: characterImage,
+            special1: characterSpecial1,
+            special2: characterSpecial2,
+            quote: characterQuote
+        };
+        localStorage.setItem("selectedCharacter", JSON.stringify(characterData));
+
+        hideElement(document.getElementById("selection-header"));
+        showElement(document.getElementById("confirmation-page"));
+    }
+});

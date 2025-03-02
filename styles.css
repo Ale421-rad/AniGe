@@ -161,6 +161,61 @@ body {
   }
 }
 
+/* Position de base de Character 26 */
+.character-26 {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+/* Image de base */
+.character-26 img.character-26-base {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Conteneur des images alternatives (Satoshi & Hikari) */
+.character-26-hover {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 150px;
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Images de sélection (Satoshi & Hikari) */
+.character-26-hover img {
+  width: 48%;
+  height: auto;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+/* Effet de zoom au survol */
+.character-26-hover img:hover {
+  transform: scale(1.1);
+}
+
+/* Quand on passe la souris, les images apparaissent */
+.character-26:hover .character-26-hover {
+  opacity: 1;
+}
+
+/* On cache l’image de base quand l’animation est en cours */
+.character-26:hover .character-26-base {
+  opacity: 0.3;
+}
+
+
 /* Page de Confirmation */
 #confirmation-page {
   display: flex;
