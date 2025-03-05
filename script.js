@@ -641,7 +641,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let characterData = {
             name: version === "Satoshi" ? "Satoshi" : "Hikari",
             image: version === "Satoshi" ? "Ch26/Satoshi/Ch26-S-L1.png" : "Ch26/Hikari/Ch26-H-L1.png",
-            special1: version === "Satoshi" ? "50% extra XP for questions about Pokémon" : "50% extra XP for questions about Pokémon",
+            special1: version === "Satoshi" ? "+5XP for questions about Pokémon" : "+5XP for questions about Pokémon",
             special2: version === "Satoshi" ? "Start the game with a Master Ball" : "Start the game with a Master Ball",
             quote: version === "Satoshi" ? "ゲットだぜ！" : "ち・が・い・ま・す！"
         };
