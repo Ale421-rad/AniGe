@@ -236,9 +236,9 @@ xpAddButton.addEventListener('click', function() {
 const xpRequiredForLevelUp = {
     1: 10,
     2: 30,
-    3: 70,
-    4: 130,
-    5: 250,
+    3: 50,
+    4: 100,
+    5: 200,
     6: null // Pas de niveau au-delà de 6
 };
 
@@ -264,13 +264,13 @@ function checkLevelUp() {
     } else if (currentLevel === 2 && currentXP >= 30) {
         currentLevel = 3;
         levelChanged = true;
-    } else if (currentLevel === 3 && currentXP >= 70) {
+    } else if (currentLevel === 3 && currentXP >= 50) {
         currentLevel = 4;
         levelChanged = true;
-    } else if (currentLevel === 4 && currentXP >= 130) {
+    } else if (currentLevel === 4 && currentXP >= 100) {
         currentLevel = 5;
         levelChanged = true;
-    } else if (currentLevel === 5 && currentXP >= 250) {
+    } else if (currentLevel === 5 && currentXP >= 200) {
         currentLevel = 6;
         levelChanged = true;
     }
@@ -286,18 +286,18 @@ function checkLevelUp() {
 }
 
 function updateCharacterStats() {
-    let pa = 1, ca = 2, sc = 0;
+    let pa = 1, ca = 3, sc = 0;
     let xpMax = xpRequiredForLevelUp[currentLevel] || "Max"; // Affiche "Max" au niveau 6
 
     switch (currentLevel) {
         case 2:
             pa = 2; ca = 3; sc = 0; break;
         case 3:
-            pa = 3; ca = 3; sc = 1; break;
+            pa = 3; ca = 4; sc = 1; break;
         case 4:
             pa = 4; ca = 4; sc = 1; break;
         case 5:
-            pa = 5; ca = 4; sc = 3; break;
+            pa = 5; ca = 5; sc = 3; break;
         case 6:
             pa = 10; ca = 5; sc = 3; break;
     }
