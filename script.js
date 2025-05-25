@@ -236,9 +236,9 @@ xpAddButton.addEventListener('click', function() {
 const xpRequiredForLevelUp = {
     1: 10,
     2: 30,
-    3: 50,
-    4: 100,
-    5: 200,
+    3: 60,
+    4: 125,
+    5: 250,
     6: null // Pas de niveau au-delà de 6
 };
 
@@ -264,13 +264,13 @@ function checkLevelUp() {
     } else if (currentLevel === 2 && currentXP >= 30) {
         currentLevel = 3;
         levelChanged = true;
-    } else if (currentLevel === 3 && currentXP >= 50) {
+    } else if (currentLevel === 3 && currentXP >= 60) {
         currentLevel = 4;
         levelChanged = true;
-    } else if (currentLevel === 4 && currentXP >= 100) {
+    } else if (currentLevel === 4 && currentXP >= 125) {
         currentLevel = 5;
         levelChanged = true;
-    } else if (currentLevel === 5 && currentXP >= 200) {
+    } else if (currentLevel === 5 && currentXP >= 250) {
         currentLevel = 6;
         levelChanged = true;
     }
@@ -293,13 +293,13 @@ function updateCharacterStats() {
         case 2:
             pa = 2; ca = 3; sc = 0; break;
         case 3:
-            pa = 3; ca = 4; sc = 1; break;
+            pa = 3; ca = 3; sc = 1; break;
         case 4:
             pa = 4; ca = 4; sc = 1; break;
         case 5:
-            pa = 5; ca = 5; sc = 3; break;
+            pa = 5; ca = 4; sc = 2; break;
         case 6:
-            pa = 10; ca = 5; sc = 3; break;
+            pa = 8; ca = 5; sc = 3; break;
     }
 
     // Mettre à jour le localStorage
