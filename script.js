@@ -16,7 +16,7 @@ const characterStats = {
     level: 1,
     xp: 0,
     pa: 1,
-    ca: 3,
+    ca: 2,
     sc: 0,
     bp: 0
 };
@@ -39,7 +39,7 @@ function resetCharacterStats() {
     characterStats.level = 1;
     characterStats.xp = 0;
     characterStats.pa = 1;
-    characterStats.ca = 3;
+    characterStats.ca = 2;
     characterStats.sc = 0;
 
     document.getElementById('level').textContent = characterStats.level;
