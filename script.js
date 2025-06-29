@@ -15,7 +15,7 @@ const xpInput = document.getElementById('xp-input');
 const characterStats = {
     level: 1,
     xp: 0,
-    pa: 1,
+    pa: 2,
     ca: 2,
     sc: 0,
     bp: 0
@@ -38,7 +38,7 @@ function hideElement(element) {
 function resetCharacterStats() {
     characterStats.level = 1;
     characterStats.xp = 0;
-    characterStats.pa = 1;
+    characterStats.pa = 2;
     characterStats.ca = 2;
     characterStats.sc = 0;
 
@@ -241,7 +241,7 @@ const xpRequiredForLevelUp = {
     2: 40,
     3: 70,
     4: 125,
-    5: 250,
+    5: 350,
     6: null // Pas de niveau au-delà de 6
 };
 
@@ -273,7 +273,7 @@ function checkLevelUp() {
     } else if (currentLevel === 4 && currentXP >= 125) {
         currentLevel = 5;
         levelChanged = true;
-    } else if (currentLevel === 5 && currentXP >= 250) {
+    } else if (currentLevel === 5 && currentXP >= 350) {
         currentLevel = 6;
         levelChanged = true;
     }
@@ -289,20 +289,20 @@ function checkLevelUp() {
 }
 
 function updateCharacterStats() {
-    let pa = 1, ca = 2, sc = 0;
+    let pa = 2, ca = 2, sc = 0;
     let xpMax = xpRequiredForLevelUp[currentLevel] || "Max"; // Affiche "Max" au niveau 6
 
     switch (currentLevel) {
         case 2:
-            pa = 2; ca = 2; sc = 1; break;
+            pa = 3; ca = 2; sc = 1; break;
         case 3:
             pa = 3; ca = 3; sc = 1; break;
         case 4:
             pa = 4; ca = 3; sc = 2; break;
         case 5:
-            pa = 5; ca = 3; sc = 3; break;
+            pa = 4; ca = 4; sc = 3; break;
         case 6:
-            pa = 8; ca = 4; sc = 4; break;
+            pa = 6; ca = 4; sc = 4; break;
     }
 
     // Mettre à jour le localStorage
