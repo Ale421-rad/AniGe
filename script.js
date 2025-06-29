@@ -195,7 +195,7 @@ confirmButton.addEventListener('click', function() {
  // Transférer les données vers la page fiche personnage
  document.getElementById("character-name").textContent = document.getElementById("confirm-name").textContent;
  document.getElementById("character-image").src = document.getElementById("confirm-image").src;
-document.getElementById("character-special").textContent = document.getElementById("confirm-special").textContent;
+ document.getElementById("character-special").textContent = document.getElementById("confirm-special").textContent;
  document.getElementById("character-special").innerHTML = `${characterSpecial1}<br>${characterSpecial2}`;
 
     resetCharacterStats(); // Reset stats when confirming
