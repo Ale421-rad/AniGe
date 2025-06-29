@@ -79,6 +79,7 @@ function loadCharacterFromLocalStorage() {
         // Recharger les informations sur la fiche personnage
         document.getElementById("character-name").textContent = character.name;
         document.getElementById("character-image").src = character.image;
+        document.getElementById("character-special").textContent = character.special1;
 
         // Mettre à jour les stats de niveau et XP
         currentXP = character.xp || 0;
@@ -127,6 +128,7 @@ function resetCharacter() {
     // Vider également les informations de la fiche personnage
     document.getElementById("character-name").textContent = "";
     document.getElementById("character-image").src = "";
+    document.getElementById("character-special").textContent = "";
 
     // Retourner à la page de sélection de personnage
     hideElement(confirmationPage);
@@ -193,6 +195,7 @@ confirmButton.addEventListener('click', function() {
  // Transférer les données vers la page fiche personnage
  document.getElementById("character-name").textContent = document.getElementById("confirm-name").textContent;
  document.getElementById("character-image").src = document.getElementById("confirm-image").src;
+ document.getElementById("character-special").textContent = document.getElementById("confirm-special").textContent;
 
     resetCharacterStats(); // Reset stats when confirming
 
@@ -270,7 +273,7 @@ function checkLevelUp() {
     } else if (currentLevel === 4 && currentXP >= 125) {
         currentLevel = 5;
         levelChanged = true;
-    } else if (currentLevel === 5 && currentXP >= 200) {
+    } else if (currentLevel === 5 && currentXP >= 250) {
         currentLevel = 6;
         levelChanged = true;
     }

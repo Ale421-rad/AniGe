@@ -459,6 +459,18 @@ button#back-button:hover {
   font-weight: bold;
 }
 
+.character-special {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0 auto;
+  max-width: 30%;
+  color: #000547; 
+  padding: 10px;
+  border: 2px solid #0011ff;
+  border-radius: 5px;
+  background-color: #18c2ce9d;
+}
+
 /* Style du bouton reset */
 #reset-container {
   display: flex;
